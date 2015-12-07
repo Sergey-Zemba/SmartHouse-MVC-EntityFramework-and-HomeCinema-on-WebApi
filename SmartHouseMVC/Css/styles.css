@@ -1,0 +1,74 @@
+﻿body {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: cadetblue;
+    min-height: 200px;
+}
+.addButtons {
+    margin-top: 80px;
+}
+.add {
+    min-width: 150px;
+    min-height: 20px;
+    width: 20%;
+    height: 5%;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+}
+.add:hover {
+    cursor: pointer;
+    background-color: #DC143C;
+}
+.item {
+    float: left;
+    width: 200px;
+    height: 300px;
+    margin: 5px;
+    border: 1px dotted gainsboro;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-position:0 40px;
+}
+.container {
+    margin-left: 100px;
+    margin-top: 80px;
+    top: 2%;
+    position: absolute;
+    left: 19%;
+}
+.controls {
+    margin-top: 230px;
+}
+.control {
+    float: left;
+    margin-left: 5px;
+}
+.delete {
+    margin-right: 5px;
+    margin-top: 5px;
+    float: right;
+}
+.indicators {
+    margin-top: 5px;
+}
+.indicator {
+    float: left;
+    margin-left: 5px;
+}
+header {
+    height: 1%;
+}
+#logo{
+    min-width: 150px;
+    width: 20%;
+}
+#logo>img{
+    vertical-align: middle;
+}
+.radio {
+    color: white;
+}
