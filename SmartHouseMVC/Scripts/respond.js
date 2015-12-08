@@ -301,8 +301,8 @@ window.matchMedia = window.matchMedia || (function(doc, undefined){
 					return;
 				}
 				callback( req.responseText );
-			}
-			if ( req.readyState == 4 ){
+			};
+		    if ( req.readyState == 4 ){
 				return;
 			}
 			req.send( null );

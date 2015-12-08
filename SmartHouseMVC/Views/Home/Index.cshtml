@@ -1,14 +1,17 @@
-﻿@{
+﻿@model IEnumerable<SmartHouseMVC.Models.SmartHouse.Devices.Device>
+@{
     Layout = null;
     ViewBag.Title = "Home Page";
 }
 
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Smart Home</title>
     <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="/Css/styles.css"/>
+    <script type="text/javascript" src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/Scripts/script.js"></script>
 </head>
 <body>
     <form id="form1">
@@ -19,14 +22,33 @@
         </header>
         <div id="content">
             <div class="addButtons">
-                <button class="add" value="AddAirConditioner">Add Air Conditioner</button><br />
-                <button class="add" value="AddCamera">Add Camera</button><br />
-                <button class="add" value="AddFridge">Add Fridge</button><br />
-                <button class="add" value="AddGarage">Add Garage</button><br />
-                <button class="add" value="AddHomeCinema">Add Home Cinema</button><br />
-                <button class="add" value="AddLoudspeakers">Add Loudspeakers</button><br />
-                <button class="add" value="AddTV">Add TV</button>
+                <button class="add" value="AddAirConditioner">Add Air Conditioner</button><br/>
+                <button class="add" value="AddCamera">Add Camera</button><br/>
+                <button class="add" value="AddFridge">Add Fridge</button><br/>
+                <button class="add" value="AddGarage">Add Garage</button><br/>
+                <button class="add" id="AddHomeCinema" type="button" value="AddHomeCinema">Add Home Cinema</button><br/>
+                <div class="radio" id="HomeCinemaRadio" hidden="true">
+                    <span><input type="radio" name="HomeCinemaGroup" />Panasonic</span>
+                    <span><input type="radio" name="HomeCinemaGroup" />Samsung</span>
+                </div>
+                <button class="add" id="AddLoudspeakers" type="button" value="AddLoudspeakers">Add Loudspeakers</button><br/>
+                <div class="radio" id="LoudspeakersRadio" hidden="true">
+                    <span><input type="radio" name="LoudspeakersGroup" />Panasonic</span>
+                    <span><input type="radio" name="LoudspeakersGroup" />Samsung</span>
+                </div>
+                <button class="add" id="AddTv" type="button" value="AddTv">Add TV</button>
+                <div class="radio" id="TvRadio" hidden="true">
+                    <span><input type="radio" name="TvGroup" />Panasonic</span>
+                    <span><input type="radio" name="TvGroup" />Samsung</span>
+                </div>
             </div>
+            <div class="container">
+                @foreach (var device in Model)
+                {
+                    <div class="item"></div>
+                }
+            </div>
+
         </div>
     </form>
 </body>

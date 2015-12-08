@@ -19,8 +19,8 @@
     border-radius: 10px;
 }
 .add:hover {
-    cursor: pointer;
     background-color: #DC143C;
+    cursor: pointer;
 }
 .item {
     float: left;
