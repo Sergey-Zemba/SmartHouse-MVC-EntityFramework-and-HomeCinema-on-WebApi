@@ -6,7 +6,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
     [Serializable]
 
-    abstract class Loudspeakers : Device, IVolumeable
+    public abstract class Loudspeakers : Device, IVolumeable
     {
         private int _volume;
         private int _prevVolume;

@@ -6,7 +6,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
     [Serializable]
 
-    class PanasonicTv : Tv, IThreeDimensional
+    public class PanasonicTv : Tv, IThreeDimensional
     {
         private TvMode _mode;
 

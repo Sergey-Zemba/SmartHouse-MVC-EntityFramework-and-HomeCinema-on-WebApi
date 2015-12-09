@@ -5,7 +5,7 @@ using SmartHouseMVC.Models.SmartHouse.States;
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
     [Serializable]
-    class Garage : Device, IOpenable
+    public class Garage : Device, IOpenable
     {
         private OpenState _openState;
         public Garage(int id)

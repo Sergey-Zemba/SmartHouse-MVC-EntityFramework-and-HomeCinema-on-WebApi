@@ -5,7 +5,7 @@ using SmartHouseMVC.Models.SmartHouse.States;
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
     [Serializable]
-    class Fridge : Device, IOpenable, ITemperature
+    public class Fridge : Device, IOpenable, ITemperature
     {
         private OpenState _openState;
         private int _temperature;

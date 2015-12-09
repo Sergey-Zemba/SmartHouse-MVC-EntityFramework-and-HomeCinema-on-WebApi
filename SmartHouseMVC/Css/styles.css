@@ -1,5 +1,5 @@
 ﻿body {
-    background-image: url("background.jpg");
+    background-image: url("/CSS/background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -69,6 +69,40 @@ header {
 #logo>img{
     vertical-align: middle;
 }
-.radio {
+#airConditioner {
+    background-image: url("/CSS/Devices/conditioner.jpg");
+}
+#camera {
+    background-image: url("/CSS/Devices/camera.jpg");
+}
+#fridge {
+    background-image: url("/CSS/Devices/fridge.png");
+}
+#garage {
+    background-image: url("/CSS/Devices/garage.jpg");
+}
+#panasonicHomeCinema {
+    background-image: url("/CSS/Devices/panasonicCinema.jpg");
+}
+#samsungHomeCinema {
+    background-image: url("/CSS/Devices/samsungCinema.jpg");
+}
+#panasonicLoudspeakers {
+    background-image: url("/CSS/Devices/panasonicLoudspeakers.jpg");
+}
+#samsungLoudspeakers {
+    background-image: url("/CSS/Devices/samsungLoudspeakers.jpg");
+}
+#panasonicTv {
+    background-image: url("/CSS/Devices/panasonicTV.jpg");
+}
+#samsungTv {
+    background-image: url("/CSS/Devices/samsungTV.jpg");
+}
+.manufacturer {
+    background-color: transparent;
+    border: 0;
     color: white;
+    text-decoration: underline;
+    cursor: pointer;
 }

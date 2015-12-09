@@ -1,4 +1,5 @@
-﻿@model IEnumerable<SmartHouseMVC.Models.SmartHouse.Devices.Device>
+﻿@using SmartHouseMVC.Models.SmartHouse.Devices
+@model IEnumerable<Device>
 @{
     Layout = null;
     ViewBag.Title = "Home Page";
@@ -23,29 +24,71 @@
         <div id="content">
             <div class="addButtons">
                 <button class="add" name="add:AirConditioner" value="AirConditioner">Add Air Conditioner</button><br/>
-                <button class="add" value="AddCamera">Add Camera</button><br/>
-                <button class="add" value="AddFridge">Add Fridge</button><br/>
-                <button class="add" value="AddGarage">Add Garage</button><br/>
-                <button class="add" id="AddHomeCinema" type="button" value="AddHomeCinema">Add Home Cinema</button><br/>
-                <div class="radio" id="HomeCinemaRadio" hidden="true">
-                    <span><input type="radio" name="HomeCinemaGroup" />Panasonic</span>
-                    <span><input type="radio" name="HomeCinemaGroup" />Samsung</span>
+                <button class="add" name="add:Camera" value="Camera">Add Camera</button><br/>
+                <button class="add" name="add:Fridge" value="Fridge">Add Fridge</button><br/>
+                <button class="add" name="add:Garage" value="Garage">Add Garage</button><br/>
+                <button class="add" id="AddHomeCinema" type="button" value="HomeCinema">Add Home Cinema</button><br/>
+                <div class="link" id="HomeCinemaLink" hidden="true">
+                    <button class="manufacturer" name="add:PanasonicHomeCinema" value="PanasonicHomeCinema">Panasonic</button>
+                    <br />
+                    <button class="manufacturer" name="add:SamsungHomeCinema" value="SamsungHomeCinema">Samsung</button>
                 </div>
-                <button class="add" id="AddLoudspeakers" type="button" value="AddLoudspeakers">Add Loudspeakers</button><br/>
-                <div class="radio" id="LoudspeakersRadio" hidden="true">
-                    <span><input type="radio" name="LoudspeakersGroup" />Panasonic</span>
-                    <span><input type="radio" name="LoudspeakersGroup" />Samsung</span>
+                <button class="add" id="AddLoudspeakers" type="button" value="Loudspeakers">Add Loudspeakers</button><br/>
+                <div class="link" id="LoudspeakersLink" hidden="true">                  
+                    <button class="manufacturer" name="add:PanasonicLoudspeakers" value="PanasonicLoudspeakers">Panasonic</button>
+                    <br />
+                    <button class="manufacturer" name="add:SamsungLoudspeakers" value="SamsungLoudspeakers">Samsung</button>
                 </div>
-                <button class="add" id="AddTv" type="button" value="AddTv">Add TV</button>
-                <div class="radio" id="TvRadio" hidden="true">
-                    <span><input type="radio" name="TvGroup" />Panasonic</span>
-                    <span><input type="radio" name="TvGroup" />Samsung</span>
+                <button class="add" id="AddTv" type="button" value="Tv">Add TV</button>
+                <div class ="link" id="TvLink" hidden="true">
+                    <button class="manufacturer" name="add:PanasonicTv" value="PanasonicTv">Panasonic</button>
+                    <br />
+                    <button class="manufacturer" name="add:SamsungTv" value="SamsungTv">Samsung</button>
                 </div>
             </div>
             <div class="container">
                 @foreach (var device in Model)
                 {
-                    <div class="item"></div>
+                    if (device is AirConditioner)
+                    {
+                        <div class="item" id="airConditioner"></div>
+                    }
+                    else if (device is Camera)
+                    {
+                        <div class="item" id="camera"></div>
+                    }
+                    else if (device is Fridge)
+                    {
+                        <div class="item" id="fridge"></div>
+                    }
+                    else if (device is Garage)
+                    {
+                        <div class="item" id="garage"></div>
+                    }
+                    else if (device is PanasonicHomeCinema)
+                    {
+                        <div class="item" id="panasonicHomeCinema"></div>
+                    }
+                    else if (device is SamsungHomeCinema)
+                    {
+                        <div class="item" id="samsungHomeCinema"></div>
+                    }
+                    else if (device is PanasonicLoudspeakers)
+                    {
+                        <div class="item" id="panasonicLoudspeakers"></div>
+                    }
+                    else if (device is SamsungLoudspeakers)
+                    {
+                        <div class="item" id="samsungLoudspeakers"></div>
+                    }
+                    else if (device is PanasonicTv)
+                    {
+                        <div class="item" id="panasonicTv"></div>
+                    }
+                    else if (device is SamsungTv)
+                    {
+                        <div class="item" id="samsungTv"></div>
+                    }
                 }
             </div>
 

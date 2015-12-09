@@ -1,10 +1,10 @@
 ﻿$(document).ready(function () {
-    $("#AddHomeCinema").click(function () { showRadios("HomeCinema") });
-    $("#AddLoudspeakers").click(function () { showRadios("Loudspeakers") });
-    $("#AddTv").click(function () { showRadios("Tv") });
+    $("#AddHomeCinema").click(function () { showLinks("HomeCinema") });
+    $("#AddLoudspeakers").click(function () { showLinks("Loudspeakers") });
+    $("#AddTv").click(function () { showLinks("Tv") });
 });
-function showRadios(dev) {
-    var id = dev + "Radio";
-    $(".radio").attr('hidden', true);
+function showLinks(dev) {
+    var id = dev + "Link";
+    $(".link").attr('hidden', true);
     $("#" + id).attr('hidden', false);
 }

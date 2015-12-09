@@ -6,7 +6,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
     [Serializable]
 
-    class PanasonicLoudspeakers : Loudspeakers, IBass
+    public class PanasonicLoudspeakers : Loudspeakers, IBass
     {
         private BassState _bassState;
         public PanasonicLoudspeakers(int id)

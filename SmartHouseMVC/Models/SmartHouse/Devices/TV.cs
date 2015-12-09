@@ -6,7 +6,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
     [Serializable]
 
-    abstract class Tv : Device, IVolumeable, IRecording
+    public abstract class Tv : Device, IVolumeable, IRecording
     {
         private int _volume;
         private int _prevVolume;

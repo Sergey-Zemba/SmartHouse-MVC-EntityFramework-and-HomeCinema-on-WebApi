@@ -5,7 +5,7 @@ using SmartHouseMVC.Models.SmartHouse.States;
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
     [Serializable]
-    class PanasonicHomeCinema : HomeCinema, IBass, IThreeDimensional
+    public class PanasonicHomeCinema : HomeCinema, IBass, IThreeDimensional
     {
 
         public PanasonicHomeCinema(int id, PanasonicTv t, PanasonicLoudspeakers l)
