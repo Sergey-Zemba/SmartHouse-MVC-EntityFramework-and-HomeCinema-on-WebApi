@@ -1,4 +1,5 @@
-﻿@using SmartHouseMVC.Models.SmartHouse.Devices
+﻿@using SmartHouseMVC.Helpers
+@using SmartHouseMVC.Models.SmartHouse.Devices
 @model IEnumerable<Device>
 @{
     Layout = null;
@@ -49,46 +50,7 @@
             <div class="container">
                 @foreach (var device in Model)
                 {
-                    if (device is AirConditioner)
-                    {
-                        <div class="item" id="airConditioner"></div>
-                    }
-                    else if (device is Camera)
-                    {
-                        <div class="item" id="camera"></div>
-                    }
-                    else if (device is Fridge)
-                    {
-                        <div class="item" id="fridge"></div>
-                    }
-                    else if (device is Garage)
-                    {
-                        <div class="item" id="garage"></div>
-                    }
-                    else if (device is PanasonicHomeCinema)
-                    {
-                        <div class="item" id="panasonicHomeCinema"></div>
-                    }
-                    else if (device is SamsungHomeCinema)
-                    {
-                        <div class="item" id="samsungHomeCinema"></div>
-                    }
-                    else if (device is PanasonicLoudspeakers)
-                    {
-                        <div class="item" id="panasonicLoudspeakers"></div>
-                    }
-                    else if (device is SamsungLoudspeakers)
-                    {
-                        <div class="item" id="samsungLoudspeakers"></div>
-                    }
-                    else if (device is PanasonicTv)
-                    {
-                        <div class="item" id="panasonicTv"></div>
-                    }
-                    else if (device is SamsungTv)
-                    {
-                        <div class="item" id="samsungTv"></div>
-                    }
+                    @DeviceHelper.CreateDevice(Html, device)
                 }
             </div>
 

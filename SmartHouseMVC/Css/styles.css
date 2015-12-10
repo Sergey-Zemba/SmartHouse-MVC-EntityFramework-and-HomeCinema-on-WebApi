@@ -69,40 +69,39 @@ header {
 #logo>img{
     vertical-align: middle;
 }
-#airConditioner {
+.airConditioner {
     background-image: url("/CSS/Devices/conditioner.jpg");
 }
-#camera {
+.camera {
     background-image: url("/CSS/Devices/camera.jpg");
 }
-#fridge {
+.fridge {
     background-image: url("/CSS/Devices/fridge.png");
 }
-#garage {
+.garage {
     background-image: url("/CSS/Devices/garage.jpg");
 }
-#panasonicHomeCinema {
+.panasonicHomeCinema {
     background-image: url("/CSS/Devices/panasonicCinema.jpg");
 }
-#samsungHomeCinema {
+.samsungHomeCinema {
     background-image: url("/CSS/Devices/samsungCinema.jpg");
 }
-#panasonicLoudspeakers {
+.panasonicLoudspeakers {
     background-image: url("/CSS/Devices/panasonicLoudspeakers.jpg");
 }
-#samsungLoudspeakers {
+.samsungLoudspeakers {
     background-image: url("/CSS/Devices/samsungLoudspeakers.jpg");
 }
-#panasonicTv {
+.panasonicTv {
     background-image: url("/CSS/Devices/panasonicTV.jpg");
 }
-#samsungTv {
+.samsungTv {
     background-image: url("/CSS/Devices/samsungTV.jpg");
 }
 .manufacturer {
     background-color: transparent;
     border: 0;
     color: white;
-    text-decoration: underline;
     cursor: pointer;
 }
