@@ -16,7 +16,6 @@ namespace SmartHouseMVC.Controllers
         {
             return View(model.GetDevices());
         }
-
         [HttpPost]
         [MultipleButton(Name = "add", Argument = "AirConditioner")]
         public ActionResult AddAirConditioner()
