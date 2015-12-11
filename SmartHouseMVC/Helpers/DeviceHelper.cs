@@ -63,20 +63,19 @@ namespace SmartHouseMVC.Helpers
             item.InnerHtml += delete.ToString();
             TagBuilder indicators = new TagBuilder("div");
             indicators.AddCssClass("indicators");
-            TagBuilder indicator = null;
+            TagBuilder indicator;
             if (device is IRecording)
             {
                 indicator = new TagBuilder("img");
-                indicator.AddCssClass("indicator");
                 indicator.MergeAttribute("src", "/Css/Controls/recind.jpg");
                 indicator.MergeAttribute("alt", "Recording");
                 if ((device as IRecording).RecordMode == RecordMode.Record)
                 {
-                    indicator.MergeAttribute("hidden", "false");
+                    indicator.AddCssClass("indicator visible");
                 }
                 else
                 {
-                    indicator.MergeAttribute("hidden", "true");
+                    indicator.AddCssClass("indicator invisible");
                 }
                 indicators.InnerHtml += indicator.ToString();
             }
@@ -88,11 +87,11 @@ namespace SmartHouseMVC.Helpers
                 indicator.MergeAttribute("alt", "Mute");
                 if ((device as IVolumeable).MuteState == MuteState.MuteOn)
                 {
-                    indicator.MergeAttribute("hidden", "false");
+                    indicator.AddCssClass("indicator visible");
                 }
                 else
                 {
-                    indicator.MergeAttribute("hidden", "true");
+                    indicator.AddCssClass("indicator invisible");
                 }
                 indicators.InnerHtml += indicator.ToString();
             }
@@ -104,11 +103,11 @@ namespace SmartHouseMVC.Helpers
                 indicator.MergeAttribute("alt", "Bass");
                 if ((device as IBass).BassState == BassState.On)
                 {
-                    indicator.MergeAttribute("hidden", "false");
+                    indicator.AddCssClass("indicator visible");
                 }
                 else
                 {
-                    indicator.MergeAttribute("hidden", "true");
+                    indicator.AddCssClass("indicator invisible");
                 }
                 indicators.InnerHtml += indicator.ToString();
             }
@@ -121,11 +120,11 @@ namespace SmartHouseMVC.Helpers
                 indicator.MergeAttribute("alt", "3D");
                 if ((device as IThreeDimensional).Mode == TvMode.ThreeDMode)
                 {
-                    indicator.MergeAttribute("hidden", "false");
+                    indicator.AddCssClass("indicator visible");
                 }
                 else
                 {
-                    indicator.MergeAttribute("hidden", "true");
+                    indicator.AddCssClass("indicator invisible");
                 }
                 indicators.InnerHtml += indicator.ToString();
             }
@@ -147,16 +146,133 @@ namespace SmartHouseMVC.Helpers
             if (device is ITemperature)
             {
                 control = new TagBuilder("div");
-                control.AddCssClass("control");
                 if (device.SwitchState == SwitchState.On)
                 {
-                    control.MergeAttribute("hidden", "false");
+                    control.AddCssClass("control visible");
                 }
                 else
                 {
-                    control.MergeAttribute("hidden", "true");
+                    control.AddCssClass("control invisible");
                 }
                 TagBuilder img = new TagBuilder("img");
+                img.MergeAttribute("src", "/Css/Controls/TempIcon.png");
+                img.MergeAttribute("alt", "temp");
+                control.InnerHtml += img.ToString();
+                TagBuilder span = new TagBuilder("span");
+                span.InnerHtml += (device as ITemperature).CurrentTemperature + "°C";
+                control.InnerHtml += span.ToString();
+                TagBuilder tempReg = new TagBuilder("input");
+                tempReg.MergeAttribute("type", "image");
+                tempReg.MergeAttribute("src", "/Css/Controls/Up.png");
+                control.InnerHtml += tempReg.ToString();
+                tempReg = new TagBuilder("input");
+                tempReg.MergeAttribute("type", "image");
+                tempReg.MergeAttribute("src", "/Css/Controls/Down.png");
+                control.InnerHtml += tempReg.ToString();
+                controls.InnerHtml += control.ToString();
+            }
+            if (device is IVolumeable)
+            {
+                control = new TagBuilder("div");
+                if (device.SwitchState == SwitchState.On)
+                {
+                    control.AddCssClass("control visible");
+                }
+                else
+                {
+                    control.AddCssClass("control invisible");
+                }
+                TagBuilder span = new TagBuilder("span");
+                span.InnerHtml += (device as IVolumeable).CurrentVolume;
+                control.InnerHtml += span.ToString();
+                TagBuilder volpReg = new TagBuilder("input");
+                volpReg.MergeAttribute("type", "image");
+                volpReg.MergeAttribute("src", "/Css/Controls/Up.png");
+                control.InnerHtml += volpReg.ToString();
+                volpReg = new TagBuilder("input");
+                volpReg.MergeAttribute("type", "image");
+                volpReg.MergeAttribute("src", "/Css/Controls/Down.png");
+                control.InnerHtml += volpReg.ToString();
+                volpReg = new TagBuilder("input");
+                volpReg.MergeAttribute("type", "image");
+                volpReg.MergeAttribute("src", "/Css/Controls/Mute.png");
+                control.InnerHtml += volpReg.ToString();
+                controls.InnerHtml += control.ToString();
+            }
+            if (device is IBass)
+            {
+                control = new TagBuilder("div");
+                if (device.SwitchState == SwitchState.On)
+                {
+                    control.AddCssClass("control visible");
+                }
+                else
+                {
+                    control.AddCssClass("control invisible");
+                }
+                TagBuilder bass = new TagBuilder("input");
+                bass.MergeAttribute("type", "image");
+                bass.MergeAttribute("src", "/Css/Controls/Bass.png");
+                control.InnerHtml += bass.ToString();
+                controls.InnerHtml += control.ToString();
+            }
+            if (device is IOpenable)
+            {
+                control = new TagBuilder("div");
+                if (device.SwitchState == SwitchState.On)
+                {
+                    control.AddCssClass("control visible");
+                }
+                else
+                {
+                    control.AddCssClass("control invisible");
+                }
+                TagBuilder locked = new TagBuilder("input");
+                locked.MergeAttribute("type", "image");
+                if ((device as IOpenable).OpenState == OpenState.Open)
+                {
+                    locked.MergeAttribute("src", "/Css/Controls/Open.png");
+                }
+                else
+                {
+                    locked.MergeAttribute("src", "/Css/Controls/Close.png");
+                }
+                control.InnerHtml += locked.ToString();
+                controls.InnerHtml += control.ToString();
+            }
+            if (device is IRecording)
+            {
+                control = new TagBuilder("div");
+                if (device.SwitchState == SwitchState.On)
+                {
+                    control.AddCssClass("control visible");
+                }
+                else
+                {
+                    control.AddCssClass("control invisible");
+                }
+                TagBuilder rec = new TagBuilder("input");
+                rec.MergeAttribute("type", "image");
+                rec.MergeAttribute("src", "/Css/Controls/Rec.png");
+                control.InnerHtml += rec.ToString();
+                controls.InnerHtml += control.ToString();
+            }
+            if (device is IThreeDimensional)
+            {
+                control = new TagBuilder("div");
+                if (device.SwitchState == SwitchState.On)
+                {
+                    control.AddCssClass("control visible");
+                }
+                else
+                {
+                    control.AddCssClass("control invisible");
+                }
+                TagBuilder threeD = new TagBuilder("input");
+                threeD.MergeAttribute("type", "image");
+                threeD.MergeAttribute("src", "/Css/Controls/3D.png");
+                control.InnerHtml += threeD.ToString();
+                controls.InnerHtml += control.ToString();
             }
             item.InnerHtml += controls.ToString();
             return new MvcHtmlString(item.ToString());

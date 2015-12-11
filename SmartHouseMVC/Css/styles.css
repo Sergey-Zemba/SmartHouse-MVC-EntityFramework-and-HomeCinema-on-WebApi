@@ -105,3 +105,9 @@ header {
     color: white;
     cursor: pointer;
 }
+.visible {
+    display: block;
+}
+.invisible {
+    display: none;
+}

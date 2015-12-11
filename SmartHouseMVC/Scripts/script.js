@@ -5,6 +5,7 @@
 });
 function showLinks(dev) {
     var id = dev + "Link";
-    $(".link").attr('hidden', true);
-    $("#" + id).attr('hidden', false);
+    $(".visible").removeClass("visible").addClass("invisible");
+    $("#" + id).removeClass("invisible");
+    $("#" + id).addClass("visible");
 }
