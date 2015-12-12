@@ -11,40 +11,41 @@
 <head>
     <title>Smart Home</title>
     <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="/Css/styles.css"/>
+    <link type="text/css" rel="stylesheet" href="/Css/styles.css" />
     <script type="text/javascript" src="/Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="/Scripts/script.js"></script>
 </head>
 <body>
-    <form id="form1" action="" method="POST">
-        <header>
-            <div id="logo">
-                <img src="/Css/smarthouse.png" alt="logo" />
-            </div>
-        </header>
+    <header>
+        <div id="logo">
+            <img src="/Css/smarthouse.png" alt="logo" />
+        </div>
+    </header>
+    @using (Html.BeginForm("DoAction", "Home", FormMethod.Post))
+    {
         <div id="content">
             <div class="addButtons">
-                <button class="add" name="add:AirConditioner" value="AirConditioner">Add Air Conditioner</button><br/>
-                <button class="add" name="add:Camera" value="Camera">Add Camera</button><br/>
-                <button class="add" name="add:Fridge" value="Fridge">Add Fridge</button><br/>
-                <button class="add" name="add:Garage" value="Garage">Add Garage</button><br/>
-                <button class="add" id="AddHomeCinema" type="button" value="HomeCinema">Add Home Cinema</button><br/>
-                <div class="invisible" id="HomeCinemaLink">
-                    <button class="manufacturer" name="add:PanasonicHomeCinema" value="PanasonicHomeCinema">Panasonic</button>
+                <button class="add" name="action" value="addAirConditioner">Add Air Conditioner</button><br />
+                <button class="add" name="action" value="addCamera">Add Camera</button><br />
+                <button class="add" name="action" value="addFridge">Add Fridge</button><br />
+                <button class="add" name="action" value="addGarage">Add Garage</button><br />
+                <button class="add" id="AddHomeCinema" type="button" value="HomeCinema">Add Home Cinema</button><br />
+                <div class="elem invisible" id="HomeCinemaLink">
+                    <button class="manufacturer" name="action" value="addPanasonicHomeCinema">Panasonic</button>
                     <br />
-                    <button class="manufacturer" name="add:SamsungHomeCinema" value="SamsungHomeCinema">Samsung</button>
+                    <button class="manufacturer" name="action" value="addSamsungHomeCinema">Samsung</button>
                 </div>
-                <button class="add" id="AddLoudspeakers" type="button" value="Loudspeakers">Add Loudspeakers</button><br/>
-                <div class="invisible" id="LoudspeakersLink">                  
-                    <button class="manufacturer" name="add:PanasonicLoudspeakers" value="PanasonicLoudspeakers">Panasonic</button>
+                <button class="add" id="AddLoudspeakers" type="button" value="Loudspeakers">Add Loudspeakers</button><br />
+                <div class=" elem invisible" id="LoudspeakersLink">
+                    <button class="manufacturer" name="action" value="addPanasonicLoudspeakers">Panasonic</button>
                     <br />
-                    <button class="manufacturer" name="add:SamsungLoudspeakers" value="SamsungLoudspeakers">Samsung</button>
+                    <button class="manufacturer" name="action" value="addSamsungLoudspeakers">Samsung</button>
                 </div>
                 <button class="add" id="AddTv" type="button" value="Tv">Add TV</button>
-                <div class ="invisible" id="TvLink">
-                    <button class="manufacturer" name="add:PanasonicTv" value="PanasonicTv">Panasonic</button>
+                <div class="elem invisible" id="TvLink">
+                    <button class="manufacturer" name="action" value="addPanasonicTv">Panasonic</button>
                     <br />
-                    <button class="manufacturer" name="add:SamsungTv" value="SamsungTv">Samsung</button>
+                    <button class="manufacturer" name="action" value="addSamsungTv">Samsung</button>
                 </div>
             </div>
             <div class="container">
@@ -55,6 +56,6 @@
             </div>
 
         </div>
-    </form>
+    }
 </body>
 </html>

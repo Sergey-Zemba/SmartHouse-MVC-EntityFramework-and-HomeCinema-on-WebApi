@@ -16,6 +16,8 @@ namespace SmartHouseMVC.Helpers
         {
             TagBuilder item = new TagBuilder("div");
             item.AddCssClass("item");
+            item.MergeAttribute("name", "id");
+            item.MergeAttribute("value", device.Id.ToString());
             if (device is AirConditioner)
             {
                 item.AddCssClass("airConditioner");
@@ -60,6 +62,8 @@ namespace SmartHouseMVC.Helpers
             delete.AddCssClass("delete");
             delete.MergeAttribute("type", "image");
             delete.MergeAttribute("src", "/Css/Controls/Delete.png");
+            delete.MergeAttribute("name", "action");
+            delete.MergeAttribute("value", "delete");
             item.InnerHtml += delete.ToString();
             TagBuilder indicators = new TagBuilder("div");
             indicators.AddCssClass("indicators");

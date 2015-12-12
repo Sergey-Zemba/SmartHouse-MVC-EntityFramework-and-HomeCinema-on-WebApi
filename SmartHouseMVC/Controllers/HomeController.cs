@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SmartHouseMVC.Attributes;
 using SmartHouseMVC.Models;
 
 namespace SmartHouseMVC.Controllers
@@ -16,75 +15,59 @@ namespace SmartHouseMVC.Controllers
         {
             return View(model.GetDevices());
         }
+
         [HttpPost]
-        [MultipleButton(Name = "add", Argument = "AirConditioner")]
-        public ActionResult AddAirConditioner()
+        public ActionResult DoAction(string action)
         {
-            model.Add("conditioner");
+            switch (action)
+            {
+                case "addAirConditioner":
+                    model.Add("conditioner");
+                    break;
+                case "addCamera":
+                    model.Add("camera");
+                    break;
+                case "addFridge":
+                    model.Add("fridge");
+                    break;
+                case "addGarage":
+                    model.Add("garage");
+                    break;
+                case "addPanasonicHomeCinema":
+                    model.Add("panasonicCinema");
+                    break;
+                case "addSamsungHomeCinema":
+                    model.Add("samsungCinema");
+                    break;
+                case "addPanasonicLoudspeakers":
+                    model.Add("panasonicLoudspeakers");
+                    break;
+                case "addSamsungLoudspeakers":
+                    model.Add("samsungLoudspeakers");
+                    break;
+                case "addPanasonicTv":
+                    model.Add("panasonicTv");
+                    break;
+                case "addSamsungTv":
+                    model.Add("samsungTv");
+                    break;
+                case "delete":
+                    model.Delete(1);
+                    break;
+            }
             return RedirectToAction("Index");
         }
-        [HttpPost]
-        [MultipleButton(Name = "add", Argument = "Camera")]
-        public ActionResult AddCamera()
-        {
-            model.Add("camera");
-            return RedirectToAction("Index");
-        }
-        [HttpPost]
-        [MultipleButton(Name = "add", Argument = "Fridge")]
-        public ActionResult AddFridge()
-        {
-            model.Add("fridge");
-            return RedirectToAction("Index");
-        }
-        [HttpPost]
-        [MultipleButton(Name = "add", Argument = "Garage")]
-        public ActionResult AddGarage()
-        {
-            model.Add("garage");
-            return RedirectToAction("Index");
-        }
-        [HttpPost]
-        [MultipleButton(Name = "add", Argument = "PanasonicHomeCinema")]
-        public ActionResult AddPanasonicHomeCinema()
-        {
-            model.Add("panasonicCinema");
-            return RedirectToAction("Index");
-        }
-        [HttpPost]
-        [MultipleButton(Name = "add", Argument = "SamsungHomeCinema")]
-        public ActionResult AddSamsungHomeCinema()
-        {
-            model.Add("samsungCinema");
-            return RedirectToAction("Index");
-        }
-        [HttpPost]
-        [MultipleButton(Name = "add", Argument = "PanasonicLoudspeakers")]
-        public ActionResult AddPanasonicLoudspeakers()
-        {
-            model.Add("panasonicLoudspeakers");
-            return RedirectToAction("Index");
-        }
-        [HttpPost]
-        [MultipleButton(Name = "add", Argument = "SamsungLoudspeakers")]
-        public ActionResult AddSamsungLoudspeakers()
-        {
-            model.Add("samsungLoudspeakers");
-            return RedirectToAction("Index");
-        }
-        [HttpPost]
-        [MultipleButton(Name = "add", Argument = "PanasonicTv")]
-        public ActionResult AddPanasonicTv()
-        {
-            model.Add("panasonicTv");
-            return RedirectToAction("Index");
-        }
-        [HttpPost]
-        [MultipleButton(Name = "add", Argument = "SamsungTv")]
-        public ActionResult AddSamsungTv()
-        {
-            model.Add("samsungTv");
-            return RedirectToAction("Index");
-        }
+
+        //public ActionResult DoAction(string action, int id)
+        //{
+        //    switch (action)
+        //    {
+        //        case "delete":
+        //            model.Delete(id);
+        //            break;
+        //    }
+        //    return RedirectToAction("Index");
+        //}
+
     }
 }
