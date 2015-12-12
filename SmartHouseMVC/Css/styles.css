@@ -47,10 +47,11 @@
     float: left;
     margin-left: 5px;
 }
-.delete {
+#delete {
     margin-right: 5px;
     margin-top: 5px;
     float: right;
+    background: url("/Css/Controls/Delete.png") no-repeat 0 0;
 }
 .indicators {
     margin-top: 5px;
@@ -110,4 +111,18 @@ header {
 }
 .invisible {
     display: none;
+}
+.test {
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: transparent;
+}
+#on {
+    background-image: url("/Css/Controls/On.png");
+}
+#off {
+    background-image: url("/Css/Controls/Off.png");
 }

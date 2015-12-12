@@ -58,12 +58,11 @@ namespace SmartHouseMVC.Helpers
             {
                 item.AddCssClass("samsungTv");
             }
-            TagBuilder delete = new TagBuilder("input");
-            delete.AddCssClass("delete");
-            delete.MergeAttribute("type", "image");
-            delete.MergeAttribute("src", "/Css/Controls/Delete.png");
+            TagBuilder delete = new TagBuilder("button");
+            delete.AddCssClass("test");
             delete.MergeAttribute("name", "action");
             delete.MergeAttribute("value", "delete");
+            delete.MergeAttribute("id", "delete");
             item.InnerHtml += delete.ToString();
             TagBuilder indicators = new TagBuilder("div");
             indicators.AddCssClass("indicators");
@@ -135,16 +134,17 @@ namespace SmartHouseMVC.Helpers
             item.InnerHtml += indicators.ToString();
             TagBuilder controls = new TagBuilder("div");
             controls.AddCssClass("controls");
-            TagBuilder control = new TagBuilder("input");
-            control.AddCssClass("control");
-            control.MergeAttribute("type", "image");
+            TagBuilder control = new TagBuilder("button");
+            control.AddCssClass("control test");
+            control.MergeAttribute("name", "action");
+            control.MergeAttribute("value", "onoff");
             if (device.SwitchState == SwitchState.On)
             {
-                control.MergeAttribute("src", "/Css/Controls/On.png");
+                control.MergeAttribute("id", "on");
             }
             else
             {
-                control.MergeAttribute("src", "/Css/Controls/Off.png");
+                control.MergeAttribute("id", "off");
             }
             controls.InnerHtml += control.ToString();
             if (device is ITemperature)

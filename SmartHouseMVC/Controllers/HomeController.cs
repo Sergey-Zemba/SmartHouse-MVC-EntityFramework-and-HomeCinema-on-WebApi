@@ -17,7 +17,7 @@ namespace SmartHouseMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult DoAction(string action)
+        public void DoAction(string action, int id = 0)
         {
             switch (action)
             {
@@ -52,21 +52,27 @@ namespace SmartHouseMVC.Controllers
                     model.Add("samsungTv");
                     break;
                 case "delete":
-                    model.Delete(1);
+                    model.Delete(id);
                     break;
-            }
-            return RedirectToAction("Index");
+                case "onoff":
+                    model.OnOff(id);
+                    break;
+              }
+            Response.Write(id);
         }
-
-        //public ActionResult DoAction(string action, int id)
+        //[HttpPost]
+        //public void DoAction(string action, int id)
         //{
         //    switch (action)
         //    {
         //        case "delete":
         //            model.Delete(id);
         //            break;
+        //        case "onoff":
+        //            model.OnOff(id);
+        //            break;
         //    }
-        //    return RedirectToAction("Index");
+        //    Response.Write(id);
         //}
 
     }
