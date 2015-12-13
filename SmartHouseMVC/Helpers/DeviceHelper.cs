@@ -16,6 +16,8 @@ namespace SmartHouseMVC.Helpers
         {
             TagBuilder item = new TagBuilder("div");
             item.AddCssClass("item");
+            item.MergeAttribute("name", "id");
+            item.MergeAttribute("value", device.Id.ToString());
             if (device is AirConditioner)
             {
                 item.AddCssClass("airConditioner");
