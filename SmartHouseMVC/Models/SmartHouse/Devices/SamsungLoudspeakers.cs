@@ -6,7 +6,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 
     public class SamsungLoudspeakers : Loudspeakers
     {
-        public SamsungLoudspeakers(int id) : base(id)
+        public SamsungLoudspeakers(int position) : base(position)
         {
         }
     }

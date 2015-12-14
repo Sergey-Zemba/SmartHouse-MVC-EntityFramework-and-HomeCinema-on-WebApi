@@ -6,36 +6,35 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
     [Serializable]
     public class AirConditioner : Device, ITemperature
     {
-        private int _temperature;
 
-        public AirConditioner(int id) : base(id)
+        public AirConditioner(int position) : base(position)
         {
-            _temperature = 18;
+            CurrentTemperature = 18;
         }
 
-        public int CurrentTemperature { get { return _temperature; } }
+        public int CurrentTemperature { get; set; }
         public void AddTemperture()
         {
-            if (_temperature < 25)
+            if (CurrentTemperature < 25)
             {
-                _temperature++;
+                CurrentTemperature++;
             }
             else
             {
-                _temperature = 25;
+                CurrentTemperature = 25;
             }
 
         }
 
         public void DecreaseTemperature()
         {
-            if (_temperature > 16)
+            if (CurrentTemperature > 16)
             {
-                _temperature--;
+                CurrentTemperature--;
             }
             else
             {
-                _temperature = 16;
+                CurrentTemperature = 16;
             }
         }
     }

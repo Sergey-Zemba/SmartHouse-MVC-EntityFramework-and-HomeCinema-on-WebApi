@@ -1,64 +1,54 @@
 ﻿using System;
 using SmartHouseMVC.Models.SmartHouse.Interfaces;
-using SmartHouseMVC.Models.SmartHouse.States;
 
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
     [Serializable]
-    
+
     public abstract class Device : ISwitchable
     {
-        private int _id;
-        private SwitchState _switchState;
 
-        public Device(int id)
+        public Device(int position)
         {
-            _id = id;
+            Position = position;
         }
 
-        public int Id { get { return _id; }}
-        public SwitchState SwitchState
-        {
-            get
-            {
-                return _switchState;
-            }
-
-        }
+        public int Id { get; set; }
+        public bool SwitchState { get; set; }
+        public int Position { get; set; }
 
         public virtual void On()
         {
-            _switchState = SwitchState.On;
+            SwitchState = true;
         }
 
         public virtual void Off()
         {
-            _switchState = SwitchState.Off;
+            SwitchState = false;
         }
 
         public override string ToString()
         {
             string str = GetType().Name + " is " + SwitchState;
-            if (SwitchState == SwitchState.On)
+            if (SwitchState)
             {
                 if (this is IBass)
                 {
-                    if ((this as IBass).BassState == BassState.On)
+                    if ((this as IBass).BassState)
                     {
                         str += " Bass";
                     }
                 }
                 if (this is IOpenable)
                 {
-                    IOpenable openable = this as IOpenable;
-                    if (openable != null)
+                    if ((this as IOpenable).OpenState)
                     {
-                        str += " and " + openable.OpenState;
+                        str += " Open";
                     }
                 }
                 if (this is IRecording)
                 {
-                    if ((this as IRecording).RecordMode == RecordMode.Record)
+                    if ((this as IRecording).RecordMode)
                     {
                         str += " REC";
                     }
@@ -69,14 +59,21 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
                 }
                 if (this is IThreeDimensional)
                 {
-                    if ((this as IThreeDimensional).Mode == TvMode.ThreeDMode)
+                    if ((this as IThreeDimensional).ThreeDMode)
                     {
                         str += " 3D";
                     }
                 }
                 if (this is IVolumeable)
                 {
-                    str += " Volume " + (this as IVolumeable).CurrentVolume;
+                    if ((this as IVolumeable).MuteState)
+                    {
+                        str += " Mute";
+                    }
+                    else
+                    {
+                        str += " Volume " + (this as IVolumeable).CurrentVolume;
+                    }
                 }
             }
             return str;

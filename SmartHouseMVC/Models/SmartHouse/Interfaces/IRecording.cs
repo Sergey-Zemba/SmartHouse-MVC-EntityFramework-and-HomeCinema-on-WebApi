@@ -1,10 +1,10 @@
-﻿using SmartHouseMVC.Models.SmartHouse.States;
+﻿
 
 namespace SmartHouseMVC.Models.SmartHouse.Interfaces
 {
     public interface IRecording
     {
-        RecordMode RecordMode { get; }
+        bool RecordMode { get; set; }
         void StartRecording();
         void StopRecording();
     }

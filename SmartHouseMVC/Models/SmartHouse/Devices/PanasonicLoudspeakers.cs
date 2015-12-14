@@ -1,6 +1,5 @@
 ﻿using System;
 using SmartHouseMVC.Models.SmartHouse.Interfaces;
-using SmartHouseMVC.Models.SmartHouse.States;
 
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
@@ -8,27 +7,20 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 
     public class PanasonicLoudspeakers : Loudspeakers, IBass
     {
-        private BassState _bassState;
-        public PanasonicLoudspeakers(int id)
-            : base(id)
+        public PanasonicLoudspeakers(int position)
+            : base(position)
         {
         }
-        public BassState BassState
-        {
-            get
-            {
-                return _bassState;
-            }
 
-        }
+        public bool BassState { get; set; }
         public void BassOn()
         {
-            _bassState = BassState.On;
+            BassState = true;
         }
 
         public void BassOff()
         {
-            _bassState = BassState.Off;
+            BassState = false;
         }
     }
 }

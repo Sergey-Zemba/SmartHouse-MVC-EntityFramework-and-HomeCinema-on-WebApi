@@ -35,30 +35,30 @@ namespace SmartHouseMVC.Models.SavingModel
                 formatter.Serialize(fs, devices);
             }
         }
-        public int MakeId()
+        public int MakePosition()
         {
-            int id;
-            using (FileStream fs = new FileStream(HttpContext.Current.Server.MapPath("~/ID.dat"), FileMode.OpenOrCreate))
+            int position;
+            using (FileStream fs = new FileStream(HttpContext.Current.Server.MapPath("~/Position.dat"), FileMode.OpenOrCreate))
             {
                 if (fs.Length != 0)
                 {
-                    id = (int)formatter.Deserialize(fs);
+                    position = (int)formatter.Deserialize(fs);
                 }
                 else
                 {
-                    id = 0;
+                    position = 0;
                 }
             }
             using (
                 FileStream fs =
-                    new FileStream(HttpContext.Current.Server.MapPath("~/ID.dat"),
+                    new FileStream(HttpContext.Current.Server.MapPath("~/Position.dat"),
                         FileMode.Open))
             {
 
-                id++;
-                formatter.Serialize(fs, id);
+                position++;
+                formatter.Serialize(fs, position);
             }
-            return id;
+            return position;
         }
     }
 }

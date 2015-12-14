@@ -1,6 +1,5 @@
 ﻿using System;
 using SmartHouseMVC.Models.SmartHouse.Interfaces;
-using SmartHouseMVC.Models.SmartHouse.States;
 
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
@@ -9,17 +8,20 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
     public abstract class HomeCinema : Device, IVolumeable, IRecording
     {
 
-        public HomeCinema(int id, Tv tv, Loudspeakers loudspeakers)
-            : base(id)
+        public HomeCinema(int position, Tv tv, Loudspeakers loudspeakers)
+            : base(position)
         {
             Tv = tv;
             Loudspeakers = loudspeakers;
+            RecordMode = Tv.RecordMode;
+            CurrentVolume = Loudspeakers.CurrentVolume;
+            MuteState = Loudspeakers.MuteState;
         }
         public Tv Tv { get; set; }
         public Loudspeakers Loudspeakers { get; set; }
-        public RecordMode RecordMode { get { return Tv.RecordMode; } }
-        public int CurrentVolume { get { return Loudspeakers.CurrentVolume; } }
-        public MuteState MuteState { get { return Loudspeakers.MuteState; } }
+        public bool RecordMode { get; set; }
+        public int CurrentVolume { get; set; }
+        public bool MuteState { get; set; }
         public virtual void AddVolume()
         {
             Tv.AddVolume();

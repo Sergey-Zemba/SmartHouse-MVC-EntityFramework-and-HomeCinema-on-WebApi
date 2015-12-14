@@ -17,7 +17,7 @@ namespace SmartHouseMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult DoAction(string action, int id = 0)
+        public ActionResult DoAction(string action, int id = 1)
         {
             switch (action)
             {
@@ -60,20 +60,6 @@ namespace SmartHouseMVC.Controllers
             }
             return RedirectToAction("Index");
         }
-        //[HttpPost]
-        //public ActionResult DoAction(string action, int id)
-        //{
-        //    switch (action)
-        //    {
-        //        case "delete":
-        //            model.Delete(id);
-        //            break;
-        //        case "onoff":
-        //            model.OnOff(id);
-        //            break;
-        //    }
-        //    return RedirectToAction("Index");
-        //}
 
     }
 }

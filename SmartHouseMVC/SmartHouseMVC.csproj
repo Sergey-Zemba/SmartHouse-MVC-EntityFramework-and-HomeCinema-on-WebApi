@@ -141,12 +141,6 @@
     <Compile Include="Models\SmartHouse\Interfaces\ITemperature.cs" />
     <Compile Include="Models\SmartHouse\Interfaces\IThreeDimensional.cs" />
     <Compile Include="Models\SmartHouse\Interfaces\IVolumeable.cs" />
-    <Compile Include="Models\SmartHouse\States\BassState.cs" />
-    <Compile Include="Models\SmartHouse\States\MuteState.cs" />
-    <Compile Include="Models\SmartHouse\States\OpenState.cs" />
-    <Compile Include="Models\SmartHouse\States\RecordMode.cs" />
-    <Compile Include="Models\SmartHouse\States\SwitchState.cs" />
-    <Compile Include="Models\SmartHouse\States\TvMode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

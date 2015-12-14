@@ -2,7 +2,7 @@
 {
     public interface ITemperature
     {
-        int CurrentTemperature { get; }
+        int CurrentTemperature { get; set; }
         void AddTemperture();
         void DecreaseTemperature();
     }

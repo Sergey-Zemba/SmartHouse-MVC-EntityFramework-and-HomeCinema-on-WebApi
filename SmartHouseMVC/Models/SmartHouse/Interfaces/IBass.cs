@@ -1,10 +1,9 @@
-﻿using SmartHouseMVC.Models.SmartHouse.States;
-
+﻿
 namespace SmartHouseMVC.Models.SmartHouse.Interfaces
 {
     public interface IBass
     {
-        BassState BassState { get; }
+        bool BassState { get; set; }
         void BassOn();
         void BassOff();
     }

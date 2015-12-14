@@ -7,6 +7,6 @@ namespace SmartHouseMVC.Models.SavingModel
     {
         List<Device> Read();
         void Write(List<Device> devices);
-        int MakeId();
+        int MakePosition();
     }
 }

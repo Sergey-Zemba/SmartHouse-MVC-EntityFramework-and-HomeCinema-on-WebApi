@@ -1,62 +1,52 @@
 ﻿using System;
 using SmartHouseMVC.Models.SmartHouse.Interfaces;
-using SmartHouseMVC.Models.SmartHouse.States;
 
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
     [Serializable]
     public class Fridge : Device, IOpenable, ITemperature
     {
-        private OpenState _openState;
-        private int _temperature;
-        public Fridge(int id)
-            : base(id)
+        public Fridge(int position)
+            : base(position)
         {
         }
 
-        public OpenState OpenState
-        {
-            get
-            {
-                return _openState;
-            }
-
-        }
-        public int CurrentTemperature { get { return _temperature; } }
+        public bool OpenState { get; set; }
+        public int CurrentTemperature { get; set; }
 
         public void Open()
         {
 
-            _openState = OpenState.Open;
+            OpenState = true;
 
         }
 
         public void Close()
         {
-            _openState = OpenState.Close;
+            OpenState = false;
         }
         public void AddTemperture()
         {
-            if (_temperature < 5)
+            if (CurrentTemperature < 5)
             {
-                _temperature++;
+                CurrentTemperature++;
             }
             else
             {
-                _temperature = 5;
+                CurrentTemperature = 5;
             }
 
         }
 
         public void DecreaseTemperature()
         {
-            if (_temperature > -5)
+            if (CurrentTemperature > -5)
             {
-                _temperature--;
+                CurrentTemperature--;
             }
             else
             {
-                _temperature = -5;
+                CurrentTemperature = -5;
             }
         }
     }

@@ -5,7 +5,6 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using SmartHouseMVC.Models.SmartHouse.Devices;
-using SmartHouseMVC.Models.SmartHouse.States;
 using SmartHouseMVC.Models.SmartHouse.Interfaces;
 
 namespace SmartHouseMVC.Helpers
@@ -72,7 +71,7 @@ namespace SmartHouseMVC.Helpers
                 indicator = new TagBuilder("img");
                 indicator.MergeAttribute("src", "/Css/Controls/recind.jpg");
                 indicator.MergeAttribute("alt", "Recording");
-                if ((device as IRecording).RecordMode == RecordMode.Record)
+                if ((device as IRecording).RecordMode)
                 {
                     indicator.AddCssClass("indicator visible");
                 }
@@ -88,7 +87,7 @@ namespace SmartHouseMVC.Helpers
                 indicator.AddCssClass("indicator");
                 indicator.MergeAttribute("src", "/Css/Controls/muteind.png");
                 indicator.MergeAttribute("alt", "Mute");
-                if ((device as IVolumeable).MuteState == MuteState.MuteOn)
+                if ((device as IVolumeable).MuteState)
                 {
                     indicator.AddCssClass("indicator visible");
                 }
@@ -104,7 +103,7 @@ namespace SmartHouseMVC.Helpers
                 indicator.AddCssClass("indicator");
                 indicator.MergeAttribute("src", "/Css/Controls/bassind.png");
                 indicator.MergeAttribute("alt", "Bass");
-                if ((device as IBass).BassState == BassState.On)
+                if ((device as IBass).BassState)
                 {
                     indicator.AddCssClass("indicator visible");
                 }
@@ -121,7 +120,7 @@ namespace SmartHouseMVC.Helpers
                 indicator.AddCssClass("indicator");
                 indicator.MergeAttribute("src", "/Css/Controls/3Dind.png");
                 indicator.MergeAttribute("alt", "3D");
-                if ((device as IThreeDimensional).Mode == TvMode.ThreeDMode)
+                if ((device as IThreeDimensional).ThreeDMode)
                 {
                     indicator.AddCssClass("indicator visible");
                 }
@@ -138,7 +137,7 @@ namespace SmartHouseMVC.Helpers
             control.AddCssClass("control test");
             control.MergeAttribute("name", "action");
             control.MergeAttribute("value", "onoff");
-            if (device.SwitchState == SwitchState.On)
+            if (device.SwitchState)
             {
                 control.MergeAttribute("id", "on");
             }
@@ -150,7 +149,7 @@ namespace SmartHouseMVC.Helpers
             if (device is ITemperature)
             {
                 control = new TagBuilder("div");
-                if (device.SwitchState == SwitchState.On)
+                if (device.SwitchState)
                 {
                     control.AddCssClass("control visible");
                 }
@@ -178,7 +177,7 @@ namespace SmartHouseMVC.Helpers
             if (device is IVolumeable)
             {
                 control = new TagBuilder("div");
-                if (device.SwitchState == SwitchState.On)
+                if (device.SwitchState)
                 {
                     control.AddCssClass("control visible");
                 }
@@ -206,7 +205,7 @@ namespace SmartHouseMVC.Helpers
             if (device is IBass)
             {
                 control = new TagBuilder("div");
-                if (device.SwitchState == SwitchState.On)
+                if (device.SwitchState)
                 {
                     control.AddCssClass("control visible");
                 }
@@ -223,7 +222,7 @@ namespace SmartHouseMVC.Helpers
             if (device is IOpenable)
             {
                 control = new TagBuilder("div");
-                if (device.SwitchState == SwitchState.On)
+                if (device.SwitchState)
                 {
                     control.AddCssClass("control visible");
                 }
@@ -233,7 +232,7 @@ namespace SmartHouseMVC.Helpers
                 }
                 TagBuilder locked = new TagBuilder("input");
                 locked.MergeAttribute("type", "image");
-                if ((device as IOpenable).OpenState == OpenState.Open)
+                if ((device as IOpenable).OpenState)
                 {
                     locked.MergeAttribute("src", "/Css/Controls/Open.png");
                 }
@@ -247,7 +246,7 @@ namespace SmartHouseMVC.Helpers
             if (device is IRecording)
             {
                 control = new TagBuilder("div");
-                if (device.SwitchState == SwitchState.On)
+                if (device.SwitchState)
                 {
                     control.AddCssClass("control visible");
                 }
@@ -264,7 +263,7 @@ namespace SmartHouseMVC.Helpers
             if (device is IThreeDimensional)
             {
                 control = new TagBuilder("div");
-                if (device.SwitchState == SwitchState.On)
+                if (device.SwitchState)
                 {
                     control.AddCssClass("control visible");
                 }

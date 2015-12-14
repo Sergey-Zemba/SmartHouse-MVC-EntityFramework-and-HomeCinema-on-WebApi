@@ -1,6 +1,5 @@
 ﻿using System;
 using SmartHouseMVC.Models.SmartHouse.Interfaces;
-using SmartHouseMVC.Models.SmartHouse.States;
 
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
@@ -8,23 +7,22 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 
     public class PanasonicTv : Tv, IThreeDimensional
     {
-        private TvMode _mode;
 
-        public PanasonicTv(int id)
-            : base(id)
+        public PanasonicTv(int position)
+            : base(position)
         {
         }
 
-        public TvMode Mode { get { return _mode; } }
+        public bool ThreeDMode { get; set; }
 
         public void ThreeDOn()
         {
-            _mode = TvMode.ThreeDMode;
+            ThreeDMode = true;
         }
 
         public void ThreeDOff()
         {
-            _mode = TvMode.StandartMode;
+            ThreeDMode = false;
         }
     }
 }

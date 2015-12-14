@@ -1,6 +1,5 @@
 ﻿using System;
 using SmartHouseMVC.Models.SmartHouse.Interfaces;
-using SmartHouseMVC.Models.SmartHouse.States;
 
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
@@ -8,60 +7,59 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 
     public abstract class Loudspeakers : Device, IVolumeable
     {
-        private int _volume;
-        private int _prevVolume;
-        private MuteState _muteState;
-        public Loudspeakers(int id)
-            : base(id)
+        public Loudspeakers(int position)
+            : base(position)
         {
         }
-        public int CurrentVolume { get { return _volume; } }
-        public MuteState MuteState { get { return _muteState; } }
+
+        public int CurrentVolume { get; set; }
+        public int PreviousVolume { get; set; }
+        public bool MuteState { get; set; }
         public virtual void AddVolume()
         {
-            if (MuteState == MuteState.MuteOn)
+            if (MuteState)
             {
                 MuteOff();
-                _volume = _prevVolume;
+                CurrentVolume = PreviousVolume;
             }
-            if (_volume < 100)
+            if (CurrentVolume < 100)
             {
-                _volume++;
+                CurrentVolume++;
             }
             else
             {
-                _volume = 100;
+                CurrentVolume = 100;
             }
         }
 
         public virtual void DecreaseVolume()
         {
-            if (MuteState == MuteState.MuteOn)
+            if (MuteState)
             {
                 MuteOff();
-                _volume = _prevVolume;
+                CurrentVolume = PreviousVolume;
             }
-            if (_volume > 0)
+            if (CurrentVolume > 0)
             {
-                _volume--;
+                CurrentVolume--;
             }
             else
             {
-                _volume = 0;
+                CurrentVolume = 0;
             }
         }
 
         public virtual void MuteOn()
         {
-            _prevVolume = CurrentVolume;
-            _volume = 0;
-            _muteState = MuteState.MuteOn;
+            PreviousVolume = CurrentVolume;
+            CurrentVolume = 0;
+            MuteState = true;
         }
 
         public virtual void MuteOff()
         {
-            _volume = _prevVolume;
-            _muteState = MuteState.MuteOff;
+            CurrentVolume = PreviousVolume;
+            MuteState = false;
         }
     }
 }

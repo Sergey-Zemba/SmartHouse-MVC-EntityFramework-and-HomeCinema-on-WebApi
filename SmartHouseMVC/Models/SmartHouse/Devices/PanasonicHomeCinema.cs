@@ -1,6 +1,5 @@
 ﻿using System;
 using SmartHouseMVC.Models.SmartHouse.Interfaces;
-using SmartHouseMVC.Models.SmartHouse.States;
 
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
@@ -8,29 +7,16 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
     public class PanasonicHomeCinema : HomeCinema, IBass, IThreeDimensional
     {
 
-        public PanasonicHomeCinema(int id, PanasonicTv t, PanasonicLoudspeakers l)
-            : base(id, t, l)
+        public PanasonicHomeCinema(int position, PanasonicTv t, PanasonicLoudspeakers l)
+            : base(position, t, l)
         {
-
+            BassState = l.BassState;
+            ThreeDMode = t.ThreeDMode;
         }
 
-        public BassState BassState
-        {
-            get
-            {
-                PanasonicLoudspeakers panasonicLoudspeakers= Loudspeakers as PanasonicLoudspeakers;
-                return panasonicLoudspeakers.BassState;
-            }
-        }
+        public bool BassState { get; set; }
 
-        public TvMode Mode
-        {
-            get
-            {
-                PanasonicTv panasonicTv = Tv as PanasonicTv;
-                return panasonicTv.Mode;
-            }
-        }
+        public bool ThreeDMode { get; set; }
 
         public void BassOn()
         {

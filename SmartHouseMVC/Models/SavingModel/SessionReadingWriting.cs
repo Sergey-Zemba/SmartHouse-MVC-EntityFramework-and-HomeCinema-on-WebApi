@@ -24,20 +24,20 @@ namespace SmartHouseMVC.Models.SavingModel
         {
             HttpContext.Current.Session["devices"] = devices;
         }
-        public int MakeId()
+        public int MakePosition()
         {
-            int id;
-            if (HttpContext.Current.Session["id"] != null)
+            int position;
+            if (HttpContext.Current.Session["position"] != null)
             {
-                id = (int)HttpContext.Current.Session["id"];
+                position = (int)HttpContext.Current.Session["position"];
             }
             else
             {
-                id = 0;
+                position = 0;
             }
-            id++;
-            HttpContext.Current.Session["id"] = id;
-            return id;
+            position++;
+            HttpContext.Current.Session["position"] = position;
+            return position;
         }
     }
 }

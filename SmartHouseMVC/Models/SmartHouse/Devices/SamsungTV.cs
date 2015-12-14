@@ -6,7 +6,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 
     public class SamsungTv : Tv
     {
-        public SamsungTv(int id) : base(id)
+        public SamsungTv(int position) : base(position)
         {
         }
     }
