@@ -7,7 +7,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 
     public class PanasonicTv : Tv, IThreeDimensional
     {
-
+        public PanasonicTv()
+        {
+            
+        }
         public PanasonicTv(int position)
             : base(position)
         {

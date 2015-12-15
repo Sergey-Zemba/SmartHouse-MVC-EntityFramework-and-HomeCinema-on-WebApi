@@ -6,7 +6,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
     [Serializable]
     public class AirConditioner : Device, ITemperature
     {
-
+        public AirConditioner()
+        {
+            
+        }
         public AirConditioner(int position) : base(position)
         {
             CurrentTemperature = 18;

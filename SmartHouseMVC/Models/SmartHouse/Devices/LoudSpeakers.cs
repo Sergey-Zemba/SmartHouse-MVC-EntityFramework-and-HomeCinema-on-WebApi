@@ -7,6 +7,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 
     public abstract class Loudspeakers : Device, IVolumeable
     {
+        public Loudspeakers()
+        {
+            
+        }
         public Loudspeakers(int position)
             : base(position)
         {

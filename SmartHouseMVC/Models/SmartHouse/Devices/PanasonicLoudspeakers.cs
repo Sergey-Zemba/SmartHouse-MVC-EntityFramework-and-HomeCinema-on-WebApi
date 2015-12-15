@@ -7,6 +7,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 
     public class PanasonicLoudspeakers : Loudspeakers, IBass
     {
+        public PanasonicLoudspeakers()
+        {
+            
+        }
         public PanasonicLoudspeakers(int position)
             : base(position)
         {

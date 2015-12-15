@@ -6,7 +6,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
     [Serializable]
     public class PanasonicHomeCinema : HomeCinema, IBass, IThreeDimensional
     {
-
+        public PanasonicHomeCinema()
+        {
+            
+        }
         public PanasonicHomeCinema(int position, PanasonicTv t, PanasonicLoudspeakers l)
             : base(position, t, l)
         {

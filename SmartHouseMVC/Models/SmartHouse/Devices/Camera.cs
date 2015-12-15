@@ -6,6 +6,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
     [Serializable]
     public class Camera : Device, IRecording
     {
+        public Camera()
+        {
+            
+        }
         public Camera(int position)
             : base(position)
         {

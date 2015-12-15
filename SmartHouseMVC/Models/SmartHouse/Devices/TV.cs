@@ -8,6 +8,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 
     public abstract class Tv : Device, IVolumeable, IRecording
     {
+        public Tv()
+        {
+            
+        }
         public Tv(int position)
             : base(position)
         {

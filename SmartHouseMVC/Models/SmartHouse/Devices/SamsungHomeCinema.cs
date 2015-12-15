@@ -6,6 +6,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 
     public class SamsungHomeCinema : HomeCinema
     {
+        public SamsungHomeCinema()
+        {
+            
+        }
         public SamsungHomeCinema(int position, SamsungTv t, SamsungLoudspeakers l)
             : base(position, t, l)
         {

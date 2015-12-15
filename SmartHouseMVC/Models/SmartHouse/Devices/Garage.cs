@@ -6,6 +6,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
     [Serializable]
     public class Garage : Device, IOpenable
     {
+        public Garage()
+        {
+            
+        }
         public Garage(int position)
             : base(position)
         {

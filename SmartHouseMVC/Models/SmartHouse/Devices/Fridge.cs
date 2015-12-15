@@ -6,6 +6,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
     [Serializable]
     public class Fridge : Device, IOpenable, ITemperature
     {
+        public Fridge()
+        {
+            
+        }
         public Fridge(int position)
             : base(position)
         {

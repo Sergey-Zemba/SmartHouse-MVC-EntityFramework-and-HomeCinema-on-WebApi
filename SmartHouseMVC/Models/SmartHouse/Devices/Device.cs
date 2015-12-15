@@ -7,6 +7,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 
     public abstract class Device : ISwitchable
     {
+        public Device()
+        {
+            
+        }
 
         public Device(int position)
         {

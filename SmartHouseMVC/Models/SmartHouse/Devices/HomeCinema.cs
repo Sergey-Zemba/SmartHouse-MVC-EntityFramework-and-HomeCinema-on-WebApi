@@ -7,7 +7,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 
     public abstract class HomeCinema : Device, IVolumeable, IRecording
     {
-
+        public HomeCinema()
+        {
+            
+        }
         public HomeCinema(int position, Tv tv, Loudspeakers loudspeakers)
             : base(position)
         {
