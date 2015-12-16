@@ -29,29 +29,17 @@
                 <button class="add" name="action" value="addCamera">Add Camera</button><br />
                 <button class="add" name="action" value="addFridge">Add Fridge</button><br />
                 <button class="add" name="action" value="addGarage">Add Garage</button><br />
-                <button class="add" id="AddHomeCinema" type="button" value="HomeCinema">Add Home Cinema</button><br />
-                <div class="elem invisible" id="HomeCinemaLink">
-                    <button class="manufacturer" name="action" value="addPanasonicHomeCinema">Panasonic</button>
-                    <br />
-                    <button class="manufacturer" name="action" value="addSamsungHomeCinema">Samsung</button>
-                </div>
-                <button class="add" id="AddLoudspeakers" type="button" value="Loudspeakers">Add Loudspeakers</button><br />
-                <div class=" elem invisible" id="LoudspeakersLink">
-                    <button class="manufacturer" name="action" value="addPanasonicLoudspeakers">Panasonic</button>
-                    <br />
-                    <button class="manufacturer" name="action" value="addSamsungLoudspeakers">Samsung</button>
-                </div>
-                <button class="add" id="AddTv" type="button" value="Tv">Add TV</button>
-                <div class="elem invisible" id="TvLink">
-                    <button class="manufacturer" name="action" value="addPanasonicTv">Panasonic</button>
-                    <br />
-                    <button class="manufacturer" name="action" value="addSamsungTv">Samsung</button>
-                </div>
+                <button class="add" name="action" value="addHomeCinema">Add Home Cinema</button><br />
+                <button class="add" name="action" value="addLoudspeakers">Add Loudspeakers</button><br />
+                <button class="add" name="action" value="addTv">Add TV</button>
             </div>
             <div class="container">
                 @foreach (var device in Model)
                 {
-                    @DeviceHelper.CreateDevice(Html, device)
+                    if (device is AirConditioner)
+                    {
+                        @Html.Partial("../AirConditioner/Index", device as AirConditioner)
+                    }
                 }
             </div>
 

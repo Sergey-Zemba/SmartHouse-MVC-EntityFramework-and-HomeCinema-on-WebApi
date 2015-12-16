@@ -11,20 +11,24 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
         {
             
         }
-        public HomeCinema(int position, Tv tv, Loudspeakers loudspeakers)
+        public HomeCinema(int position, Tv t, Loudspeakers l)
             : base(position)
         {
-            Tv = tv;
-            Loudspeakers = loudspeakers;
+            Tv = t;
+            Loudspeakers = l;
             RecordMode = Tv.RecordMode;
             CurrentVolume = Loudspeakers.CurrentVolume;
             MuteState = Loudspeakers.MuteState;
+            BassState = Loudspeakers.BassState;
+            ThreeDMode = Tv.ThreeDMode;
         }
         public Tv Tv { get; set; }
         public Loudspeakers Loudspeakers { get; set; }
         public bool RecordMode { get; set; }
         public int CurrentVolume { get; set; }
         public bool MuteState { get; set; }
+        public bool BassState { get; set; }
+        public bool ThreeDMode { get; set; }
         public virtual void AddVolume()
         {
             Tv.AddVolume();
@@ -70,6 +74,26 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
             base.Off();
             Tv.Off();
             Loudspeakers.Off();
+        }
+        public void BassOn()
+        {
+            Loudspeakers.BassOn();
+        }
+
+        public void BassOff()
+        {
+            Loudspeakers.BassOff();
+        }
+
+
+        public void ThreeDOn()
+        {
+            Tv.ThreeDOn();
+        }
+
+        public void ThreeDOff()
+        {
+            Tv.ThreeDOff();
         }
     }
 }

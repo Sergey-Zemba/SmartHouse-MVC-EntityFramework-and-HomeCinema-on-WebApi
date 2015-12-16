@@ -21,12 +21,9 @@ namespace SmartHouseMVC.Controllers
             devices.AddRange(context.Cameras);
             devices.AddRange(context.Fridges);
             devices.AddRange(context.Garages);
-            devices.AddRange(context.PanasonicHomeCinemas);
-            devices.AddRange(context.SamsungHomeCinemas);
-            devices.AddRange(context.PanasonicLoudspeakerses);
-            devices.AddRange(context.SamsungLoudspeakerses);
-            devices.AddRange(context.PanasonicTvs);
-            devices.AddRange(context.SamsungTvs);
+            devices.AddRange(context.HomeCinemas);
+            devices.AddRange(context.Loudspeakerses.Where(l => l.Position != 0));
+            devices.AddRange(context.Tvs.Where(t => t.Position != 0));
             devices = devices.OrderBy(d => d.Position).ToList();
             return View(devices);
         }
@@ -49,24 +46,15 @@ namespace SmartHouseMVC.Controllers
                 case "addGarage":
                     context.Garages.Add(new Garage(position));
                     break;
-                //case "addPanasonicHomeCinema":
-                //    model.Add("panasonicCinema");
-                //    break;
-                //case "addSamsungHomeCinema":
-                //    model.Add("samsungCinema");
-                //    break;
-                //case "addPanasonicLoudspeakers":
-                //    model.Add("panasonicLoudspeakers");
-                //    break;
-                //case "addSamsungLoudspeakers":
-                //    model.Add("samsungLoudspeakers");
-                //    break;
-                //case "addPanasonicTv":
-                //    model.Add("panasonicTv");
-                //    break;
-                //case "addSamsungTv":
-                //    model.Add("samsungTv");
-                //    break;
+                case "addHomeCinema":
+                    context.HomeCinemas.Add(new HomeCinema(position, new Tv(),new Loudspeakers() ));
+                    break;
+                case "addLoudspeakers":
+                    context.Loudspeakerses.Add(new Loudspeakers(position));
+                    break;
+                case "addTv":
+                    context.Tvs.Add((new Tv(position)));
+                    break;
             }
             context.SaveChanges();
             return RedirectToAction("Index");

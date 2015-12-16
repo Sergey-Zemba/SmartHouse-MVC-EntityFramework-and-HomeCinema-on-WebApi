@@ -119,6 +119,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AirConditionerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -137,8 +138,6 @@
     <Compile Include="Models\SmartHouse\Devices\Garage.cs" />
     <Compile Include="Models\SmartHouse\Devices\HomeCinema.cs" />
     <Compile Include="Models\SmartHouse\Devices\LoudSpeakers.cs" />
-    <Compile Include="Models\SmartHouse\Devices\PanasonicHomeCinema.cs" />
-    <Compile Include="Models\SmartHouse\Devices\SamsungHomeCinema.cs" />
     <Compile Include="Models\SmartHouse\Devices\TV.cs" />
     <Compile Include="Models\SmartHouse\Interfaces\IBass.cs" />
     <Compile Include="Models\SmartHouse\Interfaces\IOpenable.cs" />
@@ -215,6 +214,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\AirConditioner\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -38,23 +38,14 @@ namespace SmartHouseMVC.Models
                 case "garage":
                     _devices.Add(new Garage(position));
                     break;
-                case "panasonicCinema":
-                    _devices.Add(new PanasonicHomeCinema(position, new PanasonicTv(position), new PanasonicLoudspeakers(position)));
+                case "Cinema":
+                    _devices.Add(new HomeCinema(position, new Tv(), new Loudspeakers() ));
                     break;
-                case "samsungCinema":
-                    _devices.Add(new SamsungHomeCinema(position, new SamsungTv(position), new SamsungLoudspeakers(position)));
-                    break;
-                case "panasonicLoudspeakers":
-                    _devices.Add(new PanasonicLoudspeakers(position));
-                    break;
-                case "samsungLoudspeakers":
-                    _devices.Add(new SamsungLoudspeakers(position));
+                case "Loudspeakers":
+                    _devices.Add(new Loudspeakers(position));
                     break;
                 case "panasonicTv":
-                    _devices.Add(new PanasonicTv(position));
-                    break;
-                case "samsungTv":
-                    _devices.Add(new SamsungTv(position));
+                    _devices.Add(new Tv(position));
                     break;
             }
             irw.Write(_devices);

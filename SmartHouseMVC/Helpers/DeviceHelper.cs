@@ -15,8 +15,6 @@ namespace SmartHouseMVC.Helpers
         {
             TagBuilder item = new TagBuilder("div");
             item.AddCssClass("item");
-            item.MergeAttribute("name", "id");
-            item.MergeAttribute("value", device.Id.ToString());
             if (device is AirConditioner)
             {
                 item.AddCssClass("airConditioner");
@@ -33,29 +31,17 @@ namespace SmartHouseMVC.Helpers
             {
                 item.AddCssClass("garage");
             }
-            else if (device is PanasonicHomeCinema)
+            else if (device is HomeCinema)
             {
-                item.AddCssClass("panasonicHomeCinema");
+                item.AddCssClass("HomeCinema");
             }
-            else if (device is SamsungHomeCinema)
+            else if (device is Loudspeakers)
             {
-                item.AddCssClass("samsungHomeCinema");
+                item.AddCssClass("Loudspeakers");
             }
-            else if (device is PanasonicLoudspeakers)
+            else if (device is Tv)
             {
-                item.AddCssClass("panasonicLoudspeakers");
-            }
-            else if (device is SamsungLoudspeakers)
-            {
-                item.AddCssClass("samsungLoudspeakers");
-            }
-            else if (device is PanasonicTv)
-            {
-                item.AddCssClass("panasonicTv");
-            }
-            else if (device is SamsungTv)
-            {
-                item.AddCssClass("samsungTv");
+                item.AddCssClass("Tv");
             }
             TagBuilder delete = new TagBuilder("button");
             delete.AddCssClass("test");

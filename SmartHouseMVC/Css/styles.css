@@ -47,11 +47,13 @@
     float: left;
     margin-left: 5px;
 }
-#delete {
+.delete {
     margin-right: 5px;
     margin-top: 5px;
     float: right;
     background: url("/Css/Controls/Delete.png") no-repeat 0 0;
+    width: 30px;
+    height: 30px;
 }
 .indicators {
     margin-top: 5px;
@@ -82,29 +84,14 @@ header {
 .garage {
     background-image: url("/CSS/Devices/garage.jpg");
 }
-.panasonicHomeCinema {
+.HomeCinema {
     background-image: url("/CSS/Devices/panasonicCinema.jpg");
 }
-.samsungHomeCinema {
-    background-image: url("/CSS/Devices/samsungCinema.jpg");
-}
-.panasonicLoudspeakers {
+.Loudspeakers {
     background-image: url("/CSS/Devices/panasonicLoudspeakers.jpg");
 }
-.samsungLoudspeakers {
-    background-image: url("/CSS/Devices/samsungLoudspeakers.jpg");
-}
-.panasonicTv {
+.Tv {
     background-image: url("/CSS/Devices/panasonicTV.jpg");
-}
-.samsungTv {
-    background-image: url("/CSS/Devices/samsungTV.jpg");
-}
-.manufacturer {
-    background-color: transparent;
-    border: 0;
-    color: white;
-    cursor: pointer;
 }
 .visible {
     display: block;
