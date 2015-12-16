@@ -22,11 +22,21 @@ namespace SmartHouseMVC.Models
         public DbSet<Camera> Cameras { get; set; }
         public DbSet<Fridge> Fridges { get; set; }
         public DbSet<Garage> Garages { get; set; }
-        //public DbSet<PanasonicHomeCinema> PanasonicHomeCinemas { get; set; }
-        //public DbSet<SamsungHomeCinema> SamsungHomeCinemas { get; set; }
-        //public DbSet<PanasonicLoudspeakers> PanasonicLoudspeakerses { get; set; }
-        //public DbSet<SamsungLoudspeakers> SamsungLoudspeakerses { get; set; }
-        //public DbSet<PanasonicTv> PanasonicTvs { get; set; }
-        //public DbSet<SamsungTv> SamsungTvs { get; set; }
+        public DbSet<PanasonicHomeCinema> PanasonicHomeCinemas { get; set; }
+        public DbSet<SamsungHomeCinema> SamsungHomeCinemas { get; set; }
+        public DbSet<PanasonicLoudspeakers> PanasonicLoudspeakerses { get; set; }
+        public DbSet<SamsungLoudspeakers> SamsungLoudspeakerses { get; set; }
+        public DbSet<PanasonicTv> PanasonicTvs { get; set; }
+        public DbSet<SamsungTv> SamsungTvs { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<HomeCinema>()
+                .HasRequired(h => h.Loudspeakers)
+                .WithOptional(l => l.HomeCinema);
+            modelBuilder.Entity<HomeCinema>()
+                .HasRequired(h => h.Tv)
+                .WithOptional(t => t.HomeCinema);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

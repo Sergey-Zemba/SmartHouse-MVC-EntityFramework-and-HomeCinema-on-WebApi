@@ -6,7 +6,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
     [Serializable]
 
-    public abstract class Tv : Device, IVolumeable, IRecording
+    public class Tv : Device, IVolumeable, IRecording, IThreeDimensional
     {
         public Tv()
         {
@@ -17,12 +17,13 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
         {
         }
 
+        public HomeCinema HomeCinema { get; set; }
         public bool RecordMode { get; set; }
         public int CurrentVolume { get; set; }
         public int PreviousVolume { get; set; }
         public bool MuteState { get; set; }
-
-        public virtual void AddVolume()
+        public bool ThreeDMode { get; set; }
+        public void AddVolume()
         {
             if (MuteState)
             {
@@ -39,7 +40,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
             }
         }
 
-        public virtual void DecreaseVolume()
+        public void DecreaseVolume()
         {
             if (MuteState)
             {
@@ -55,27 +56,36 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
                 CurrentVolume = 0;
             }
         }
-        public virtual void MuteOn()
+        public void MuteOn()
         {
             PreviousVolume = CurrentVolume;
             CurrentVolume = 0;
             MuteState = true;
         }
 
-        public virtual void MuteOff()
+        public void MuteOff()
         {
             CurrentVolume = PreviousVolume;
             MuteState = false;
         }
 
-        public virtual void StartRecording()
+        public void StartRecording()
         {
             RecordMode = true;
         }
 
-        public virtual void StopRecording()
+        public void StopRecording()
         {
             RecordMode = false;
+        }
+        public void ThreeDOn()
+        {
+            ThreeDMode = true;
+        }
+
+        public void ThreeDOff()
+        {
+            ThreeDMode = false;
         }
     }
 }

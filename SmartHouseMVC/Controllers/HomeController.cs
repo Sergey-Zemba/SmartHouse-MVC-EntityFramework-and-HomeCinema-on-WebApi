@@ -21,12 +21,12 @@ namespace SmartHouseMVC.Controllers
             devices.AddRange(context.Cameras);
             devices.AddRange(context.Fridges);
             devices.AddRange(context.Garages);
-            //devices.AddRange(context.PanasonicHomeCinemas);
-            //devices.AddRange(context.SamsungHomeCinemas);
-            //devices.AddRange(context.PanasonicLoudspeakerses);
-            //devices.AddRange(context.SamsungLoudspeakerses);
-            //devices.AddRange(context.PanasonicTvs);
-            //devices.AddRange(context.SamsungTvs);
+            devices.AddRange(context.PanasonicHomeCinemas);
+            devices.AddRange(context.SamsungHomeCinemas);
+            devices.AddRange(context.PanasonicLoudspeakerses);
+            devices.AddRange(context.SamsungLoudspeakerses);
+            devices.AddRange(context.PanasonicTvs);
+            devices.AddRange(context.SamsungTvs);
             devices = devices.OrderBy(d => d.Position).ToList();
             return View(devices);
         }

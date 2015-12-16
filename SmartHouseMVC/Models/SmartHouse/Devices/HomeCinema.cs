@@ -5,7 +5,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
     [Serializable]
 
-    public abstract class HomeCinema : Device, IVolumeable, IRecording
+    public class HomeCinema : Device, IVolumeable, IRecording, IBass, IThreeDimensional
     {
         public HomeCinema()
         {

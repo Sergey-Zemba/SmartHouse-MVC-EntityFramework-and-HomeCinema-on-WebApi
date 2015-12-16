@@ -5,7 +5,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
     [Serializable]
 
-    public abstract class Loudspeakers : Device, IVolumeable
+    public class Loudspeakers : Device, IVolumeable, IBass
     {
         public Loudspeakers()
         {
@@ -16,10 +16,12 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
         {
         }
 
+        public HomeCinema HomeCinema { get; set; }
         public int CurrentVolume { get; set; }
         public int PreviousVolume { get; set; }
         public bool MuteState { get; set; }
-        public virtual void AddVolume()
+        public bool BassState { get; set; }
+        public void AddVolume()
         {
             if (MuteState)
             {
@@ -36,7 +38,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
             }
         }
 
-        public virtual void DecreaseVolume()
+        public void DecreaseVolume()
         {
             if (MuteState)
             {
@@ -53,17 +55,26 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
             }
         }
 
-        public virtual void MuteOn()
+        public void MuteOn()
         {
             PreviousVolume = CurrentVolume;
             CurrentVolume = 0;
             MuteState = true;
         }
 
-        public virtual void MuteOff()
+        public void MuteOff()
         {
             CurrentVolume = PreviousVolume;
             MuteState = false;
+        }
+        public void BassOn()
+        {
+            BassState = true;
+        }
+
+        public void BassOff()
+        {
+            BassState = false;
         }
     }
 }

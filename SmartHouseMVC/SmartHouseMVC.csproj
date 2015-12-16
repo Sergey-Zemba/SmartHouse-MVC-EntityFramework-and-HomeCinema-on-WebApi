@@ -138,11 +138,7 @@
     <Compile Include="Models\SmartHouse\Devices\HomeCinema.cs" />
     <Compile Include="Models\SmartHouse\Devices\LoudSpeakers.cs" />
     <Compile Include="Models\SmartHouse\Devices\PanasonicHomeCinema.cs" />
-    <Compile Include="Models\SmartHouse\Devices\PanasonicLoudspeakers.cs" />
-    <Compile Include="Models\SmartHouse\Devices\PanasonicTV.cs" />
     <Compile Include="Models\SmartHouse\Devices\SamsungHomeCinema.cs" />
-    <Compile Include="Models\SmartHouse\Devices\SamsungLoudspeakers.cs" />
-    <Compile Include="Models\SmartHouse\Devices\SamsungTV.cs" />
     <Compile Include="Models\SmartHouse\Devices\TV.cs" />
     <Compile Include="Models\SmartHouse\Interfaces\IBass.cs" />
     <Compile Include="Models\SmartHouse\Interfaces\IOpenable.cs" />
