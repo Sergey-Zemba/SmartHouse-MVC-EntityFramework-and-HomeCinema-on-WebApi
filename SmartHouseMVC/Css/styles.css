@@ -46,6 +46,7 @@
 .control {
     float: left;
     margin-left: 5px;
+    
 }
 .delete {
     margin-right: 5px;
@@ -99,17 +100,54 @@ header {
 .invisible {
     display: none;
 }
-.test {
-    border: none;
-    padding: 0;
+.on {
+    background: url("/Css/Controls/On.png") no-repeat 0 0;
     width: 30px;
     height: 30px;
-    cursor: pointer;
-    background-color: transparent;
 }
-#on {
-    background-image: url("/Css/Controls/On.png");
+.off {
+    background: url("/Css/Controls/Off.png") no-repeat 0 0;
+    width: 30px;
+    height: 30px;
 }
-#off {
-    background-image: url("/Css/Controls/Off.png");
+.up {
+    background: url("/Css/Controls/Up.png") no-repeat 0 0;
+    width: 20px;
+    height: 15px;
 }
+.down {
+    background: url("/Css/Controls/Down.png") no-repeat 0 0;
+    width: 20px;
+    height: 15px;
+}
+.bass {
+    background: url("/Css/Controls/Bass.png") no-repeat 0 0;
+    width: 30px;
+    height: 30px;
+}
+.open {
+    background: url("/Css/Controls/Open.png") no-repeat 0 0;
+    width: 30px;
+    height: 30px;
+}
+.close {
+    background: url("/Css/Controls/Close.png") no-repeat 0 0;
+    width: 30px;
+    height: 30px;
+}
+.rec {
+    background: url("/Css/Controls/Rec.png") no-repeat 0 0;
+    width: 30px;
+    height: 30px;
+}
+.threeD {
+    background: url("/Css/Controls/3D.png") no-repeat 0 0;
+    width: 30px;
+    height: 30px;
+}
+.mute {
+    background: url("/Css/Controls/Mute.png") no-repeat 0 0;
+    width: 30px;
+    height: 30px;
+}
+

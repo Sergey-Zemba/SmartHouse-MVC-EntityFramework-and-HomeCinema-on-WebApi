@@ -1,4 +1,9 @@
-﻿@model SmartHouseMVC.Models.SmartHouse.Devices.AirConditioner
+﻿@using SmartHouseMVC.Helpers
+@model SmartHouseMVC.Models.SmartHouse.Devices.AirConditioner
 <div class="item airConditioner">
-    @Html.ActionLink(" ","Delete", "AirConditioner", new{id = Model.Id}, new {@class = "delete"})
+    @DeleteHelper.CreateControl(Html, Model)
+    <div class="controls">
+        @ISwitchableHelper.CreateControl(Html, Model)
+        @ITemperatureHelper.CreateControl(Html, Model)
+    </div>
 </div>

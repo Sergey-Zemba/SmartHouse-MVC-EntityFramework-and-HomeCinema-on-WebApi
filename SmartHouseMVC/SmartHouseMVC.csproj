@@ -124,7 +124,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DeleteHelper.cs" />
     <Compile Include="Helpers\DeviceHelper.cs" />
+    <Compile Include="Helpers\IBassHelper.cs" />
+    <Compile Include="Helpers\IOpenableHelper.cs" />
+    <Compile Include="Helpers\IRecordingHelper.cs" />
+    <Compile Include="Helpers\ISwitchableHelper.cs" />
+    <Compile Include="Helpers\ITemperatureHelper.cs" />
+    <Compile Include="Helpers\IThreeDimensionalHelper.cs" />
+    <Compile Include="Helpers\IVolumeableHelper.cs" />
     <Compile Include="Models\DeviceContext.cs" />
     <Compile Include="Models\DeviceContextInitializer.cs" />
     <Compile Include="Models\DeviceListModel.cs" />
