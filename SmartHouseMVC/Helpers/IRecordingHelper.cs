@@ -22,7 +22,7 @@ namespace SmartHouseMVC.Helpers
             {
                 div.AddCssClass("invisible");
             }
-            div.InnerHtml += helper.ActionLink(" ", "Rec", device.GetType().Name, new { id = device.Id },
+            div.InnerHtml += helper.ActionLink(" ", "Rec", device.GetType().BaseType.Name, new { id = device.Id },
                 new { @class = "control rec" });
             return new MvcHtmlString(div.ToString());
         }
@@ -30,7 +30,7 @@ namespace SmartHouseMVC.Helpers
         {
             TagBuilder img = new TagBuilder("img");
             img.AddCssClass("indicator");
-            if ((device as IRecording).RecordMode)
+            if ((device as IRecording).RecordMode && device.SwitchState)
             {
                 img.AddCssClass("visible");
             }

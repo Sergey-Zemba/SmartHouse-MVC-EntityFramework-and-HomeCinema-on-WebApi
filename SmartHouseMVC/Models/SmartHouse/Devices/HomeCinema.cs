@@ -16,14 +16,16 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
         {
             Tv = t;
             Loudspeakers = l;
-            RecordMode = Tv.RecordMode;
-            CurrentVolume = Loudspeakers.CurrentVolume;
-            MuteState = Loudspeakers.MuteState;
-            BassState = Loudspeakers.BassState;
-            ThreeDMode = Tv.ThreeDMode;
+            //RecordMode = Tv.RecordMode;
+            //CurrentVolume = Loudspeakers.CurrentVolume;
+            //MuteState = Loudspeakers.MuteState;
+            //BassState = Loudspeakers.BassState;
+            //ThreeDMode = Tv.ThreeDMode;
         }
-        public Tv Tv { get; set; }
-        public Loudspeakers Loudspeakers { get; set; }
+        public  virtual Tv Tv { get; set; }
+        public int TvId { get; set; }
+        public  virtual Loudspeakers Loudspeakers { get; set; }
+        public int LoudspeakersId { get; set; }
         public bool RecordMode { get; set; }
         public int CurrentVolume { get; set; }
         public bool MuteState { get; set; }

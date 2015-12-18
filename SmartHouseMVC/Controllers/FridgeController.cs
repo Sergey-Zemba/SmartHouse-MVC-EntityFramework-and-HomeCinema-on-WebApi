@@ -9,53 +9,67 @@ using SmartHouseMVC.Models.SmartHouse.Devices;
 
 namespace SmartHouseMVC.Controllers
 {
-    public class AirConditionerController : Controller
+    public class FridgeController : Controller
     {
         DeviceContext context = new DeviceContext();
-        // GET: AirConditioner
-        public ActionResult Conditioner()
+        // GET: Camera
+        public ActionResult Fridge()
         {
             return View();
         }
         public ActionResult Delete(int id)
         {
-            AirConditioner conditioner = context.AirConditioners.Find(id);
-            context.AirConditioners.Remove(conditioner);
+            Fridge fridge = context.Fridges.Find(id);
+            context.Fridges.Remove(fridge);
             context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
         public ActionResult OnOff(int id)
         {
-            AirConditioner conditioner = context.AirConditioners.Find(id);
-            if (conditioner.SwitchState)
+            Fridge fridge = context.Fridges.Find(id);
+            if (fridge.SwitchState)
             {
-                conditioner.Off();
+                fridge.Off();
             }
             else
             {
-                conditioner.On();
+                fridge.On();
             }
-            context.Entry(conditioner).State = EntityState.Modified;
+            context.Entry(fridge).State = EntityState.Modified;
+            context.SaveChanges();
+            return RedirectToAction("Index", "Home");
+        }
+        public ActionResult OpenClose(int id)
+        {
+            Fridge fridge = context.Fridges.Find(id);
+            if (fridge.OpenState)
+            {
+                fridge.Close();
+            }
+            else
+            {
+                fridge.Open();
+            }
+            context.Entry(fridge).State = EntityState.Modified;
             context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
         public ActionResult Warmer(int id)
         {
-            AirConditioner conditioner = context.AirConditioners.Find(id);
-            conditioner.AddTemperture();
-            context.Entry(conditioner).State = EntityState.Modified;
+            Fridge fridge = context.Fridges.Find(id);
+            fridge.AddTemperture();
+            context.Entry(fridge).State = EntityState.Modified;
             context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
         public ActionResult Cooler(int id)
         {
-            AirConditioner conditioner = context.AirConditioners.Find(id);
-            conditioner.DecreaseTemperature();
-            context.Entry(conditioner).State = EntityState.Modified;
+            Fridge fridge = context.Fridges.Find(id);
+            fridge.DecreaseTemperature();
+            context.Entry(fridge).State = EntityState.Modified;
             context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
-
         protected override void Dispose(bool disposing)
         {
             context.Dispose();

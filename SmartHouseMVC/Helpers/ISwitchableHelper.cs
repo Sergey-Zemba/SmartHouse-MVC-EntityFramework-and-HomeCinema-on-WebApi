@@ -15,12 +15,12 @@ namespace SmartHouseMVC.Helpers
             TagBuilder div = new TagBuilder("div");
             if (device.SwitchState)
             {
-                div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().Name, new { id = device.Id },
+                div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().BaseType.Name, new { id = device.Id },
                     new { @class = "control on" });
             }
             else
             {
-                div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().Name, new { id = device.Id },
+                div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().BaseType.Name, new { id = device.Id },
                     new { @class = "control off" });
             }
             return new MvcHtmlString(div.ToString());

@@ -1,0 +1,11 @@
+﻿@using SmartHouseMVC.Helpers
+@model SmartHouseMVC.Models.SmartHouse.Devices.Fridge
+<div class="item fridge">
+    @DeleteHelper.CreateControl(Html, Model)
+    <div class="controls">
+        @ISwitchableHelper.CreateControl(Html, Model)
+        @IOpenableHelper.CreateControl(Html, Model)
+        @ITemperatureHelper.CreateControl(Html, Model)
+    </div>
+</div>
+

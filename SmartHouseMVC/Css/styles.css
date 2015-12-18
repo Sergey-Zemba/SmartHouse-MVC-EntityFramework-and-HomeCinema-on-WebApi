@@ -85,13 +85,13 @@ header {
 .garage {
     background-image: url("/CSS/Devices/garage.jpg");
 }
-.HomeCinema {
+.homeCinema {
     background-image: url("/CSS/Devices/panasonicCinema.jpg");
 }
-.Loudspeakers {
+.loudspeakers {
     background-image: url("/CSS/Devices/panasonicLoudspeakers.jpg");
 }
-.Tv {
+.tv {
     background-image: url("/CSS/Devices/panasonicTV.jpg");
 }
 .visible {

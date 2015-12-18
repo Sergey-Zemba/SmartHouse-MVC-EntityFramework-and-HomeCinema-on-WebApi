@@ -23,7 +23,7 @@ namespace SmartHouseMVC.Helpers
             {
                 div.AddCssClass("invisible");
             }
-            div.InnerHtml += helper.ActionLink(" ", "ThreeDOnOff", device.GetType().Name, new { id = device.Id },
+            div.InnerHtml += helper.ActionLink(" ", "ThreeDOnOff", device.GetType().BaseType.Name, new { id = device.Id },
                 new { @class = "control threeD" });
             return new MvcHtmlString(div.ToString());
         }
@@ -32,7 +32,7 @@ namespace SmartHouseMVC.Helpers
         {
             TagBuilder img = new TagBuilder("img");
             img.AddCssClass("indicator");
-            if ((device as IThreeDimensional).ThreeDMode)
+            if ((device as IThreeDimensional).ThreeDMode && device.SwitchState)
             {
                 img.AddCssClass("visible");
             }

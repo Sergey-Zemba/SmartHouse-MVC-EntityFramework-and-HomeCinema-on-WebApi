@@ -1,0 +1,9 @@
+﻿@using SmartHouseMVC.Helpers
+@model SmartHouseMVC.Models.SmartHouse.Devices.Garage
+<div class="item garage">
+    @DeleteHelper.CreateControl(Html, Model)
+    <div class="controls">
+        @ISwitchableHelper.CreateControl(Html, Model)
+        @IOpenableHelper.CreateControl(Html, Model)
+    </div>
+</div>

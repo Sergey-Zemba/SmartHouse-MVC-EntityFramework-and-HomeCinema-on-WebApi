@@ -38,7 +38,31 @@
                 {
                     if (device is AirConditioner)
                     {
-                        @Html.Partial("../AirConditioner/Index", device as AirConditioner)
+                        @Html.Partial("../AirConditioner/Conditioner", device as AirConditioner)
+                    }
+                    else if (device is Camera)
+                    {
+                        @Html.Partial("../Camera/Camera", device as Camera)
+                    }
+                    else if (device is Garage)
+                    {
+                        @Html.Partial("../Garage/garage", device as Garage)
+                    }
+                    else if (device is Fridge)
+                    {
+                        @Html.Partial("../Fridge/Fridge", device as Fridge)
+                    }
+                    else if (device is Loudspeakers)
+                    {
+                        @Html.Partial("../Loudspeakers/Loudspeakers", device as Loudspeakers)
+                    }
+                    else if (device is Tv)
+                    {
+                        @Html.Partial("../Tv/Tv", device as Tv)
+                    }
+                    else if (device is HomeCinema)
+                    {
+                        @Html.Partial("../HomeCinema/HomeCinema", device as HomeCinema)
                     }
                 }
             </div>

@@ -1,0 +1,14 @@
+﻿@using SmartHouseMVC.Helpers
+@model SmartHouseMVC.Models.SmartHouse.Devices.Loudspeakers
+<div class="item loudspeakers">
+    @DeleteHelper.CreateControl(Html, Model)
+    <div class="indicators">
+        @IVolumeableHelper.CreateIndicator(Html, Model)
+        @IBassHelper.CreateIndicator(Html, Model)
+    </div>
+    <div class="controls">
+        @ISwitchableHelper.CreateControl(Html, Model)
+        @IVolumeableHelper.CreateControl(Html, Model)
+        @IBassHelper.CreateControl(Html, Model)
+    </div>
+</div>

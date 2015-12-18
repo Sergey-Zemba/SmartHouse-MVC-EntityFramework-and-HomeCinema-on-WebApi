@@ -120,12 +120,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AirConditionerController.cs" />
+    <Compile Include="Controllers\CameraController.cs" />
+    <Compile Include="Controllers\FridgeController.cs" />
+    <Compile Include="Controllers\GarageController.cs" />
+    <Compile Include="Controllers\HomeCinemaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoudspeakersController.cs" />
+    <Compile Include="Controllers\TvController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DeleteHelper.cs" />
-    <Compile Include="Helpers\DeviceHelper.cs" />
     <Compile Include="Helpers\IBassHelper.cs" />
     <Compile Include="Helpers\IOpenableHelper.cs" />
     <Compile Include="Helpers\IRecordingHelper.cs" />
@@ -135,7 +140,6 @@
     <Compile Include="Helpers\IVolumeableHelper.cs" />
     <Compile Include="Models\DeviceContext.cs" />
     <Compile Include="Models\DeviceContextInitializer.cs" />
-    <Compile Include="Models\DeviceListModel.cs" />
     <Compile Include="Models\SavingModel\BinaryReadingWriting.cs" />
     <Compile Include="Models\SavingModel\IReadingWriting.cs" />
     <Compile Include="Models\SavingModel\SessionReadingWriting.cs" />
@@ -218,11 +222,15 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\AirConditioner\Index.cshtml" />
+    <Content Include="Views\AirConditioner\Conditioner.cshtml" />
+    <Content Include="Views\Camera\Camera.cshtml" />
+    <Content Include="Views\Garage\Garage.cshtml" />
+    <Content Include="Views\Fridge\Fridge.cshtml" />
+    <Content Include="Views\Loudspeakers\Loudspeakers.cshtml" />
+    <Content Include="Views\Tv\Tv.cshtml" />
+    <Content Include="Views\HomeCinema\HomeCinema.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
