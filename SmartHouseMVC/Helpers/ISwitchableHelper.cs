@@ -13,15 +13,32 @@ namespace SmartHouseMVC.Helpers
         public static MvcHtmlString CreateControl(this HtmlHelper helper, Device device)
         {
             TagBuilder div = new TagBuilder("div");
+            string className = device.GetType().Name;
             if (device.SwitchState)
             {
-                div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().BaseType.Name, new { id = device.Id },
-                    new { @class = "control on" });
+                if (!className.Contains("_"))
+                {
+                    div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().Name, new { id = device.Id },
+                        new { @class = "control on" });
+                }
+                else
+                {
+                    div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().BaseType.Name, new { id = device.Id },
+                        new { @class = "control on" });
+                }
             }
             else
             {
-                div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().BaseType.Name, new { id = device.Id },
-                    new { @class = "control off" });
+                if (!className.Contains("_"))
+                {
+                    div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().Name, new { id = device.Id },
+                        new { @class = "control off" });
+                }
+                else
+                {
+                    div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().BaseType.Name, new { id = device.Id },
+                        new { @class = "control off" });
+                }
             }
             return new MvcHtmlString(div.ToString());
         }

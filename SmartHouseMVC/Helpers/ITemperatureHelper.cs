@@ -31,10 +31,21 @@ namespace SmartHouseMVC.Helpers
             span.AddCssClass("control");
             span.InnerHtml = (device as ITemperature).CurrentTemperature + "°C";
             div.InnerHtml += span.ToString();
-            div.InnerHtml += helper.ActionLink(" ", "Warmer", device.GetType().Name, new {id = device.Id},
-                new {@class = "control up"});
-            div.InnerHtml += helper.ActionLink(" ", "Cooler", device.GetType().Name, new { id = device.Id },
-                new { @class = "control down" });
+            string className = device.GetType().Name;
+            if (!className.Contains("_"))
+            {
+                div.InnerHtml += helper.ActionLink(" ", "Warmer", device.GetType().Name, new { id = device.Id },
+                    new { @class = "control up" });
+                div.InnerHtml += helper.ActionLink(" ", "Cooler", device.GetType().Name, new { id = device.Id },
+                    new { @class = "control down" });
+            }
+            else
+            {
+                div.InnerHtml += helper.ActionLink(" ", "Warmer", device.GetType().BaseType.Name, new { id = device.Id },
+                    new { @class = "control up" });
+                div.InnerHtml += helper.ActionLink(" ", "Cooler", device.GetType().BaseType.Name, new { id = device.Id },
+                   new { @class = "control down" });
+            }
             return new MvcHtmlString(div.ToString());
         }
     }

@@ -27,12 +27,25 @@ namespace SmartHouseMVC.Helpers
             span.AddCssClass("control");
             span.InnerHtml = (device as IVolumeable).CurrentVolume.ToString();
             div.InnerHtml += span.ToString();
-            div.InnerHtml += helper.ActionLink(" ", "AddVolume", device.GetType().BaseType.Name, new { id = device.Id },
-                new { @class = "control up" });
-            div.InnerHtml += helper.ActionLink(" ", "DecreaseVolume", device.GetType().BaseType.Name, new { id = device.Id },
-                new { @class = "control down" });
-            div.InnerHtml += helper.ActionLink(" ", "Mute", device.GetType().BaseType.Name, new { id = device.Id },
-                new {@class = "control mute"});
+            string className = device.GetType().Name;
+            if (!className.Contains("_"))
+            {
+                div.InnerHtml += helper.ActionLink(" ", "AddVolume", device.GetType().Name, new { id = device.Id },
+                    new { @class = "control up" });
+                div.InnerHtml += helper.ActionLink(" ", "DecreaseVolume", device.GetType().Name, new { id = device.Id },
+                    new { @class = "control down" });
+                div.InnerHtml += helper.ActionLink(" ", "Mute", device.GetType().Name, new { id = device.Id },
+                    new { @class = "control mute" });
+            }
+            else
+            {
+                div.InnerHtml += helper.ActionLink(" ", "AddVolume", device.GetType().BaseType.Name, new { id = device.Id },
+                    new { @class = "control up" });
+                div.InnerHtml += helper.ActionLink(" ", "DecreaseVolume", device.GetType().BaseType.Name, new { id = device.Id },
+                    new { @class = "control down" });
+                div.InnerHtml += helper.ActionLink(" ", "Mute", device.GetType().BaseType.Name, new { id = device.Id },
+                    new { @class = "control mute" });
+            }
             return new MvcHtmlString(div.ToString());
         }
         public static MvcHtmlString CreateIndicator(this HtmlHelper helper, Device device)

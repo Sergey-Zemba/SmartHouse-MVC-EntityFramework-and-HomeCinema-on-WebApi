@@ -17,7 +17,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
         {
         }
 
-        //public HomeCinema HomeCinema { get; set; }
+        public HomeCinema HomeCinema { get; set; }
         public bool RecordMode { get; set; }
         public int CurrentVolume { get; set; }
         public int PreviousVolume { get; set; }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using SmartHouseMVC.Models.SmartHouse.Interfaces;
 
 namespace SmartHouseMVC.Models.SmartHouse.Devices
@@ -9,28 +10,67 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
     {
         public HomeCinema()
         {
-            
+
         }
         public HomeCinema(int position, Tv t, Loudspeakers l)
             : base(position)
         {
             Tv = t;
             Loudspeakers = l;
-            //RecordMode = Tv.RecordMode;
-            //CurrentVolume = Loudspeakers.CurrentVolume;
-            //MuteState = Loudspeakers.MuteState;
-            //BassState = Loudspeakers.BassState;
-            //ThreeDMode = Tv.ThreeDMode;
+
         }
-        public  virtual Tv Tv { get; set; }
-        public int TvId { get; set; }
-        public  virtual Loudspeakers Loudspeakers { get; set; }
-        public int LoudspeakersId { get; set; }
-        public bool RecordMode { get; set; }
-        public int CurrentVolume { get; set; }
-        public bool MuteState { get; set; }
-        public bool BassState { get; set; }
-        public bool ThreeDMode { get; set; }
+        public virtual Tv Tv { get; set; }
+        public virtual Loudspeakers Loudspeakers { get; set; }
+        [NotMapped]
+        public bool RecordMode
+        {
+            get { return Tv.RecordMode; }
+            set
+            {
+                Tv.RecordMode = value;
+            }
+            
+        }
+        [NotMapped]
+        public int CurrentVolume
+        {
+            get { return Tv.CurrentVolume; }
+            set
+            {
+                Tv.CurrentVolume = value;
+                Loudspeakers.CurrentVolume = value;
+            }
+        }
+
+        [NotMapped]
+        public bool MuteState
+        {
+            get { return Tv.MuteState; }
+            set
+            {
+                Tv.MuteState = value;
+                Loudspeakers.MuteState = value;
+            }
+            
+        }
+        [NotMapped]
+        public bool BassState
+        {
+            get { return Loudspeakers.BassState; }
+            set
+            {
+                Loudspeakers.BassState = value;
+            }
+        }
+        [NotMapped]
+        public bool ThreeDMode
+        {
+            get { return Tv.ThreeDMode; }
+            set
+            {
+                Tv.ThreeDMode = value;
+            }
+        }
         public virtual void AddVolume()
         {
             Tv.AddVolume();

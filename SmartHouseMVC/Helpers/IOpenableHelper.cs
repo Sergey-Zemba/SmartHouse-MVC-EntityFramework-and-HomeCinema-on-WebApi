@@ -22,15 +22,33 @@ namespace SmartHouseMVC.Helpers
             {
                 div.AddCssClass("invisible");
             }
+
+            string className = device.GetType().Name;
             if ((device as IOpenable).OpenState)
             {
-                div.InnerHtml += helper.ActionLink(" ", "OpenClose", device.GetType().Name, new {id = device.Id},
-                    new {@class = "control open"});
+                if (!className.Contains("_"))
+                {
+                    div.InnerHtml += helper.ActionLink(" ", "OpenClose", device.GetType().Name, new { id = device.Id },
+                        new { @class = "control open" });
+                }
+                else
+                {
+                    div.InnerHtml += helper.ActionLink(" ", "OpenClose", device.GetType().BaseType.Name, new { id = device.Id },
+                        new { @class = "control open" });
+                }
             }
             else
             {
-                div.InnerHtml += helper.ActionLink(" ", "OpenClose", device.GetType().Name, new { id = device.Id },
-                    new { @class = "control close" });
+                if (!className.Contains("_"))
+                {
+                    div.InnerHtml += helper.ActionLink(" ", "OpenClose", device.GetType().Name, new { id = device.Id },
+                        new { @class = "control close" });
+                }
+                else
+                {
+                    div.InnerHtml += helper.ActionLink(" ", "OpenClose", device.GetType().BaseType.Name, new { id = device.Id },
+                        new { @class = "control close" });
+                }
             }
             return new MvcHtmlString(div.ToString());
         }

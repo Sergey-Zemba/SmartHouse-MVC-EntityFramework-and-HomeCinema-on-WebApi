@@ -22,8 +22,17 @@ namespace SmartHouseMVC.Helpers
             {
                 div.AddCssClass("invisible");
             }
-            div.InnerHtml += helper.ActionLink(" ", "Bass", device.GetType().BaseType.Name, new { id = device.Id },
-                new { @class = "control bass" });
+            string className = device.GetType().Name;
+            if (!className.Contains("_"))
+            {
+                div.InnerHtml += helper.ActionLink(" ", "Bass", device.GetType().Name, new { id = device.Id },
+                    new { @class = "control bass" });
+            }
+            else
+            {
+                div.InnerHtml += helper.ActionLink(" ", "Bass", device.GetType().BaseType.Name, new { id = device.Id },
+                    new { @class = "control bass" });
+            }
             return new MvcHtmlString(div.ToString());
         }
         public static MvcHtmlString CreateIndicator(this HtmlHelper helper, Device device)
