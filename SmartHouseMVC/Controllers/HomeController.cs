@@ -54,7 +54,7 @@ namespace SmartHouseMVC.Controllers
                     context.Loudspeakerses.Add(new Loudspeakers(position));
                     break;
                 case "addTv":
-                    context.Tvs.Add((new Tv(position)));
+                    context.Tvs.Add(new Tv(position));
                     break;
             }
             context.SaveChanges();

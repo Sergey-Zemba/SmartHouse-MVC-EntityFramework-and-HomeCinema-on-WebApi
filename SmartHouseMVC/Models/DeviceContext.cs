@@ -25,15 +25,5 @@ namespace SmartHouseMVC.Models
         public DbSet<HomeCinema> HomeCinemas { get; set; }
         public DbSet<Loudspeakers> Loudspeakerses { get; set; }
         public DbSet<Tv> Tvs { get; set; }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<HomeCinema>()
-                .HasRequired(h => h.Loudspeakers)
-                .WithOptional(l => l.HomeCinema);
-            modelBuilder.Entity<HomeCinema>()
-                .HasRequired(h => h.Tv)
-                .WithOptional(t => t.HomeCinema);
-            base.OnModelCreating(modelBuilder);
-        }
     }
 }

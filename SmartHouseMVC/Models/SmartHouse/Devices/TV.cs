@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.Contracts;
 using SmartHouseMVC.Models.SmartHouse.Interfaces;
 
@@ -16,8 +17,6 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
             : base(position)
         {
         }
-
-        public HomeCinema HomeCinema { get; set; }
         public bool RecordMode { get; set; }
         public int CurrentVolume { get; set; }
         public int PreviousVolume { get; set; }

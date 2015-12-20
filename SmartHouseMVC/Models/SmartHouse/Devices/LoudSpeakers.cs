@@ -15,8 +15,6 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
             : base(position)
         {
         }
-
-        public HomeCinema HomeCinema { get; set; }
         public int CurrentVolume { get; set; }
         public int PreviousVolume { get; set; }
         public bool MuteState { get; set; }

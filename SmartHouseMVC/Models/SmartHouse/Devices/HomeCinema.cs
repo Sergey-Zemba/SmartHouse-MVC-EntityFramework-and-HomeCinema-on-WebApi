@@ -10,7 +10,8 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
     {
         public HomeCinema()
         {
-
+            Tv = new Tv();
+            Loudspeakers = new Loudspeakers();
         }
         public HomeCinema(int position, Tv t, Loudspeakers l)
             : base(position)
@@ -19,9 +20,10 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
             Loudspeakers = l;
 
         }
-        public virtual Tv Tv { get; set; }
-        public virtual Loudspeakers Loudspeakers { get; set; }
         [NotMapped]
+        public Tv Tv { get; set; }
+        [NotMapped]
+        public Loudspeakers Loudspeakers { get; set; }
         public bool RecordMode
         {
             get { return Tv.RecordMode; }
@@ -31,7 +33,6 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
             }
             
         }
-        [NotMapped]
         public int CurrentVolume
         {
             get { return Tv.CurrentVolume; }
@@ -41,8 +42,6 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
                 Loudspeakers.CurrentVolume = value;
             }
         }
-
-        [NotMapped]
         public bool MuteState
         {
             get { return Tv.MuteState; }
@@ -53,7 +52,6 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
             }
             
         }
-        [NotMapped]
         public bool BassState
         {
             get { return Loudspeakers.BassState; }
@@ -62,7 +60,6 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
                 Loudspeakers.BassState = value;
             }
         }
-        [NotMapped]
         public bool ThreeDMode
         {
             get { return Tv.ThreeDMode; }
@@ -71,7 +68,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
                 Tv.ThreeDMode = value;
             }
         }
-        public virtual void AddVolume()
+        public void AddVolume()
         {
             Tv.AddVolume();
             Loudspeakers.AddVolume();
@@ -94,12 +91,12 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
             Loudspeakers.MuteOff();
         }
 
-        public virtual void StartRecording()
+        public void StartRecording()
         {
             Tv.StartRecording();
         }
 
-        public virtual void StopRecording()
+        public void StopRecording()
         {
             Tv.StopRecording();
         }
