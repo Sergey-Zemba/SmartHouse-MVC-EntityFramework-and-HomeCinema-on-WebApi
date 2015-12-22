@@ -1,0 +1,19 @@
+﻿@using SmartHouseMVC.Helpers
+@model SmartHouseMVC.Models.SmartHouse.Devices.HomeCinema
+<div class="item homeCinema">
+    <input type="hidden" id="hidden" value="@Model.Id" />
+    @DeleteHelper.CreateControl(Html, Model)
+    <div class="indicators">
+        @IVolumeableHelper.CreateIndicator(Html, Model)
+        @IRecordingHelper.CreateIndicator(Html, Model)
+        @IBassHelper.CreateIndicator(Html, Model)
+        @IThreeDimensionalHelper.CreateIndicator(Html, Model)
+    </div>
+    <div class="controls">
+        @ISwitchableHelper.CreateControl(Html, Model)
+        @IVolumeableHelper.CreateControl(Html, Model)
+        @IRecordingHelper.CreateControl(Html, Model)
+        @IBassHelper.CreateControl(Html, Model)
+        @IThreeDimensionalHelper.CreateControl(Html, Model)
+    </div>
+</div>

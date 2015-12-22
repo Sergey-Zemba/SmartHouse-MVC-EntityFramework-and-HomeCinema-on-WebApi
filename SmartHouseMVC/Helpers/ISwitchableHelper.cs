@@ -19,12 +19,12 @@ namespace SmartHouseMVC.Helpers
                 if (!className.Contains("_"))
                 {
                     div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().Name, new { id = device.Id },
-                        new { @class = "control on" });
+                        new { @class = "control on onOff" });
                 }
                 else
                 {
                     div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().BaseType.Name, new { id = device.Id },
-                        new { @class = "control on" });
+                        new { @class = "control on onOff" });
                 }
             }
             else
@@ -32,12 +32,12 @@ namespace SmartHouseMVC.Helpers
                 if (!className.Contains("_"))
                 {
                     div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().Name, new { id = device.Id },
-                        new { @class = "control off" });
+                        new { @class = "control off onOff" });
                 }
                 else
                 {
                     div.InnerHtml += helper.ActionLink(" ", "OnOff", device.GetType().BaseType.Name, new { id = device.Id },
-                        new { @class = "control off" });
+                        new { @class = "control off onOff" });
                 }
             }
             return new MvcHtmlString(div.ToString());

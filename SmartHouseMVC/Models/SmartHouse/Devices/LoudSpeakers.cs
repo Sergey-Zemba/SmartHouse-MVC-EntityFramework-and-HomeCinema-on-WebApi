@@ -3,7 +3,6 @@ using SmartHouseMVC.Models.SmartHouse.Interfaces;
 
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
-    [Serializable]
 
     public class Loudspeakers : Device, IVolumeable, IBass
     {

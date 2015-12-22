@@ -55,6 +55,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -137,6 +138,7 @@
     <Compile Include="Controllers\Device Controllers\FridgeController.cs" />
     <Compile Include="Controllers\Device Controllers\GarageController.cs" />
     <Compile Include="Controllers\Device Controllers\HomeCinemaController.cs" />
+    <Compile Include="Controllers\HomeCinemaWebApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Device Controllers\LoudspeakersController.cs" />
     <Compile Include="Controllers\Device Controllers\TvController.cs" />
@@ -222,6 +224,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\script.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -243,6 +246,7 @@
     <Content Include="Views\Loudspeakers\Loudspeakers.cshtml" />
     <Content Include="Views\Tv\Tv.cshtml" />
     <Content Include="Views\HomeCinema\HomeCinema.cshtml" />
+    <Content Include="Views\HomeCinemaWebApi\HomeCinemaWebApi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

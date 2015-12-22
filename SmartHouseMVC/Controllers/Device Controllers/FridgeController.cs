@@ -12,11 +12,6 @@ namespace SmartHouseMVC.Controllers
     public class FridgeController : Controller
     {
         DeviceContext context = new DeviceContext();
-        // GET: Camera
-        public ActionResult Fridge()
-        {
-            return View();
-        }
         public ActionResult Delete(int id)
         {
             Fridge fridge = context.Fridges.Find(id);

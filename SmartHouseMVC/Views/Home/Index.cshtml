@@ -13,6 +13,7 @@
     <meta charset="utf-8">
     <link type="text/css" rel="stylesheet" href="/Css/styles.css" />
     <script type="text/javascript" src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/Scripts/script.js"></script>
 </head>
 <body>
     <header>
@@ -61,7 +62,7 @@
                     }
                     else if (device is HomeCinema)
                     {
-                        @Html.Partial("../HomeCinema/HomeCinema", device as HomeCinema)
+                        @Html.Partial("../HomeCinemaWebApi/HomeCinemaWebApi", device as HomeCinema)
                     }
                 }
             </div>

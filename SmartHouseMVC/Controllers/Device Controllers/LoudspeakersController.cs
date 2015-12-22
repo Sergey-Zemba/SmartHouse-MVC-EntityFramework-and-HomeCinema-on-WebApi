@@ -12,11 +12,6 @@ namespace SmartHouseMVC.Controllers
     public class LoudspeakersController : Controller
     {
         DeviceContext context = new DeviceContext();
-        // GET: AirConditioner
-        public ActionResult Loudspeakers()
-        {
-            return View();
-        }
         public ActionResult Delete(int id)
         {
             Loudspeakers loudspeakers = context.Loudspeakerses.Find(id);

@@ -12,11 +12,6 @@ namespace SmartHouseMVC.Controllers
     public class CameraController : Controller
     {
         DeviceContext context = new DeviceContext();
-        // GET: Camera
-        public ActionResult Camera()
-        {
-            return View();
-        }
         public ActionResult Delete(int id)
         {
             Camera camera = context.Cameras.Find(id);

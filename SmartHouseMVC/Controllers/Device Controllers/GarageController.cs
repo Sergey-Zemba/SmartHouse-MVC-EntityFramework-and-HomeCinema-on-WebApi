@@ -12,11 +12,6 @@ namespace SmartHouseMVC.Controllers
     public class GarageController : Controller
     {
         DeviceContext context = new DeviceContext();
-        // GET: Camera
-        public ActionResult Garage()
-        {
-            return View();
-        }
         public ActionResult Delete(int id)
         {
             Garage garage = context.Garages.Find(id);

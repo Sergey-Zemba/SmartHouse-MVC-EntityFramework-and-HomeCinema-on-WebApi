@@ -4,7 +4,7 @@ using SmartHouseMVC.Models.SmartHouse.Interfaces;
 
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
-    [Serializable]
+    
 
     public class HomeCinema : Device, IVolumeable, IRecording, IBass, IThreeDimensional
     {
@@ -24,6 +24,7 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
         public Tv Tv { get; set; }
         [NotMapped]
         public Loudspeakers Loudspeakers { get; set; }
+
         public bool RecordMode
         {
             get { return Tv.RecordMode; }

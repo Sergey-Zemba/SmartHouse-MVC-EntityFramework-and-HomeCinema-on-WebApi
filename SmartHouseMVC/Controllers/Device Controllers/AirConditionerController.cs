@@ -12,11 +12,7 @@ namespace SmartHouseMVC.Controllers
     public class AirConditionerController : Controller
     {
         DeviceContext context = new DeviceContext();
-        // GET: AirConditioner
-        public ActionResult Conditioner()
-        {
-            return View();
-        }
+        
         public ActionResult Delete(int id)
         {
             AirConditioner conditioner = context.AirConditioners.Find(id);

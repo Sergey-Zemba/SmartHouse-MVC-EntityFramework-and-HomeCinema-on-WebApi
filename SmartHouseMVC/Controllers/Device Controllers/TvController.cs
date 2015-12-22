@@ -12,11 +12,6 @@ namespace SmartHouseMVC.Controllers
     public class TvController : Controller
     {
         DeviceContext context = new DeviceContext();
-        // GET: AirConditioner
-        public ActionResult Tv()
-        {
-            return View();
-        }
         public ActionResult Delete(int id)
         {
             Tv tv = context.Tvs.Find(id);

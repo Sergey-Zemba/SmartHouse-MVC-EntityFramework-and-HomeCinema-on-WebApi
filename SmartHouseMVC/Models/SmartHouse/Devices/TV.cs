@@ -5,7 +5,6 @@ using SmartHouseMVC.Models.SmartHouse.Interfaces;
 
 namespace SmartHouseMVC.Models.SmartHouse.Devices
 {
-    [Serializable]
 
     public class Tv : Device, IVolumeable, IRecording, IThreeDimensional
     {

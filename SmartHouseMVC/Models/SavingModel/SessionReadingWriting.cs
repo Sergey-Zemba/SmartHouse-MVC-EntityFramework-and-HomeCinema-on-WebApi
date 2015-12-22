@@ -6,24 +6,6 @@ namespace SmartHouseMVC.Models.SavingModel
 {
     public class SessionReadingWriting : IReadingWriting
     {
-        public List<Device> Read()
-        {
-            List<Device> devices;
-            if (HttpContext.Current.Session["devices"] != null)
-            {
-                devices = (List<Device>) HttpContext.Current.Session["devices"];
-            }
-            else
-            {
-                devices = new List<Device>();
-            }
-            return devices;
-        }
-
-        public void Write(List<Device> devices)
-        {
-            HttpContext.Current.Session["devices"] = devices;
-        }
         public int MakePosition()
         {
             int position;
