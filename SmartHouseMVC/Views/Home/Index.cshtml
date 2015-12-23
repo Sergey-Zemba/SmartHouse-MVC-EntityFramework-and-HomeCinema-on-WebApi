@@ -19,13 +19,13 @@
     <script type="text/javascript" src="/Scripts/cinema.js"></script>
 </head>
 <body>
-    <header>
-        <div id="logo">
-            <img src="/Css/smarthouse.png" alt="logo" />
-        </div>
-    </header>
-    @using (Html.BeginForm("DoAction", "Home", FormMethod.Post, new Dictionary<string, object>{{"id", "main"}}))
+    @using (Html.BeginForm("DoAction", "Home", FormMethod.Post, new Dictionary<string, object> { { "id", "main" } }))
     {
+        <header>
+            <div id="logo">
+                <img src="/Css/smarthouse.png" alt="logo" />
+            </div>
+        </header>
         <div id="content">
             <div class="addButtons">
                 <button class="add" name="action" value="addAirConditioner">Add Air Conditioner</button><br />

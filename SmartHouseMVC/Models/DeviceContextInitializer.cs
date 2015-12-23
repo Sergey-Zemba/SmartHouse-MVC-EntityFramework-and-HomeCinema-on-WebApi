@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SmartHouseMVC.Models
 {
-    public class DeviceContextInitializer : DropCreateDatabaseAlways<DeviceContext>
+    public class DeviceContextInitializer : CreateDatabaseIfNotExists<DeviceContext>
     {
     }
 }
