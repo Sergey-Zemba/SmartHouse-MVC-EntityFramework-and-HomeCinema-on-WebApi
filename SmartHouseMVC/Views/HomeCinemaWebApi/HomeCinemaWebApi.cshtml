@@ -1,7 +1,7 @@
 ﻿@using SmartHouseMVC.Helpers
 @model SmartHouseMVC.Models.SmartHouse.Devices.HomeCinema
-<div class="item homeCinema">
-    <input type="hidden" id="hidden" value="@Model.Id" />
+<div class="item homeCinema" id="@Model.Position">
+    <input type="hidden" class="hidden" value="@Model.Id" />
     @DeleteHelper.CreateControl(Html, Model)
     <div class="indicators">
         @IVolumeableHelper.CreateIndicator(Html, Model)

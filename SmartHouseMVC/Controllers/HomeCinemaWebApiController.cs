@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using SmartHouseMVC.Models;
 using SmartHouseMVC.Models.SmartHouse.Devices;
@@ -26,8 +25,8 @@ namespace SmartHouseMVC.Controllers
             context.HomeCinemas.Remove(homeCinema);
             context.SaveChanges();
         }
-        [System.Web.Http.HttpPut]
-        [System.Web.Http.Route("api/HomeCinemaWebApi/OnOff/{id}")]
+        [HttpPut]
+        [Route("api/HomeCinemaWebApi/OnOff/{id}")]
         public void OnOff(int id)
         {
             HomeCinema homeCinema = context.HomeCinemas.Find(id);
@@ -42,8 +41,8 @@ namespace SmartHouseMVC.Controllers
             context.Entry(homeCinema).State = EntityState.Modified;
             context.SaveChanges();
         }
-        [System.Web.Http.HttpPut]
-        [System.Web.Http.Route("api/HomeCinemaWebApi/AddVolume/{id}")]
+        [HttpPut]
+        [Route("api/HomeCinemaWebApi/AddVolume/{id}")]
         public void AddVolume(int id)
         {
             HomeCinema homeCinema = context.HomeCinemas.Find(id);
@@ -51,8 +50,8 @@ namespace SmartHouseMVC.Controllers
             context.Entry(homeCinema).State = EntityState.Modified;
             context.SaveChanges();
         }
-        [System.Web.Http.HttpPut]
-        [System.Web.Http.Route("api/HomeCinemaWebApi/DecreaseVolume/{id}")]
+        [HttpPut]
+        [Route("api/HomeCinemaWebApi/DecreaseVolume/{id}")]
         public void DecreaseVolume(int id)
         {
             HomeCinema homeCinema = context.HomeCinemas.Find(id);
@@ -60,8 +59,8 @@ namespace SmartHouseMVC.Controllers
             context.Entry(homeCinema).State = EntityState.Modified;
             context.SaveChanges();
         }
-        [System.Web.Http.HttpPut]
-        [System.Web.Http.Route("api/HomeCinemaWebApi/Mute/{id}")]
+        [HttpPut]
+        [Route("api/HomeCinemaWebApi/Mute/{id}")]
         public void Mute(int id)
         {
             HomeCinema homeCinema = context.HomeCinemas.Find(id);
@@ -76,8 +75,8 @@ namespace SmartHouseMVC.Controllers
             context.Entry(homeCinema).State = EntityState.Modified;
             context.SaveChanges();
         }
-        [System.Web.Http.HttpPut]
-        [System.Web.Http.Route("api/HomeCinemaWebApi/Rec/{id}")]
+        [HttpPut]
+        [Route("api/HomeCinemaWebApi/Rec/{id}")]
         public void Rec(int id)
         {
             HomeCinema homeCinema = context.HomeCinemas.Find(id);
@@ -92,8 +91,8 @@ namespace SmartHouseMVC.Controllers
             context.Entry(homeCinema).State = EntityState.Modified;
             context.SaveChanges();
         }
-        [System.Web.Http.HttpPut]
-        [System.Web.Http.Route("api/HomeCinemaWebApi/Bass/{id}")]
+        [HttpPut]
+        [Route("api/HomeCinemaWebApi/Bass/{id}")]
         public void Bass(int id)
         {
             HomeCinema homeCinema = context.HomeCinemas.Find(id);
@@ -108,8 +107,8 @@ namespace SmartHouseMVC.Controllers
             context.Entry(homeCinema).State = EntityState.Modified;
             context.SaveChanges();
         }
-        [System.Web.Http.HttpPut]
-        [System.Web.Http.Route("api/HomeCinemaWebApi/ThreeDOnOff/{id}")]
+        [HttpPut]
+        [Route("api/HomeCinemaWebApi/ThreeDOnOff/{id}")]
         public void ThreeDOnOff(int id)
         {
             HomeCinema homeCinema = context.HomeCinemas.Find(id);

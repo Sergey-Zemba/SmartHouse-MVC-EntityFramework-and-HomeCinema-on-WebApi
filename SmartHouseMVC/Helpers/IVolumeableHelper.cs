@@ -31,18 +31,18 @@ namespace SmartHouseMVC.Helpers
             if (!className.Contains("_"))
             {
                 div.InnerHtml += helper.ActionLink(" ", "AddVolume", device.GetType().Name, new { id = device.Id },
-                    new { @class = "control up" });
+                    new { @class = "control up addVolume" });
                 div.InnerHtml += helper.ActionLink(" ", "DecreaseVolume", device.GetType().Name, new { id = device.Id },
-                    new { @class = "control down" });
+                    new { @class = "control down decreaseVolume" });
                 div.InnerHtml += helper.ActionLink(" ", "Mute", device.GetType().Name, new { id = device.Id },
                     new { @class = "control mute" });
             }
             else
             {
                 div.InnerHtml += helper.ActionLink(" ", "AddVolume", device.GetType().BaseType.Name, new { id = device.Id },
-                    new { @class = "control up" });
+                    new { @class = "control up addVolume" });
                 div.InnerHtml += helper.ActionLink(" ", "DecreaseVolume", device.GetType().BaseType.Name, new { id = device.Id },
-                    new { @class = "control down" });
+                    new { @class = "control down decreaseVolume" });
                 div.InnerHtml += helper.ActionLink(" ", "Mute", device.GetType().BaseType.Name, new { id = device.Id },
                     new { @class = "control mute" });
             }
