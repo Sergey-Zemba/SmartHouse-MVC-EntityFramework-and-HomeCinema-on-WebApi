@@ -146,18 +146,18 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DeleteHelper.cs" />
-    <Compile Include="Helpers\IBassHelper.cs" />
-    <Compile Include="Helpers\IOpenableHelper.cs" />
-    <Compile Include="Helpers\IRecordingHelper.cs" />
-    <Compile Include="Helpers\ISwitchableHelper.cs" />
-    <Compile Include="Helpers\ITemperatureHelper.cs" />
-    <Compile Include="Helpers\IThreeDimensionalHelper.cs" />
-    <Compile Include="Helpers\IVolumeableHelper.cs" />
+    <Compile Include="Helpers\BassHelper.cs" />
+    <Compile Include="Helpers\OpenableHelper.cs" />
+    <Compile Include="Helpers\RecordingHelper.cs" />
+    <Compile Include="Helpers\SwitchableHelper.cs" />
+    <Compile Include="Helpers\TemperatureHelper.cs" />
+    <Compile Include="Helpers\ThreeDimensionalHelper.cs" />
+    <Compile Include="Helpers\VolumeableHelper.cs" />
     <Compile Include="Models\DeviceContext.cs" />
     <Compile Include="Models\DeviceContextInitializer.cs" />
-    <Compile Include="Models\SavingModel\BinaryReadingWriting.cs" />
-    <Compile Include="Models\SavingModel\IReadingWriting.cs" />
-    <Compile Include="Models\SavingModel\SessionReadingWriting.cs" />
+    <Compile Include="Models\Position Saving\BinarySaving.cs" />
+    <Compile Include="Models\Position Saving\ISaving.cs" />
+    <Compile Include="Models\Position Saving\SessionSaving.cs" />
     <Compile Include="Models\SmartHouse\Devices\AirConditioner.cs" />
     <Compile Include="Models\SmartHouse\Devices\Camera.cs" />
     <Compile Include="Models\SmartHouse\Devices\Device.cs" />
@@ -217,6 +217,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -224,7 +225,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\HomeCinemaScript.js" />
+    <Content Include="Scripts\cinema.js" />
+    <Content Include="Scripts\scrolling.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

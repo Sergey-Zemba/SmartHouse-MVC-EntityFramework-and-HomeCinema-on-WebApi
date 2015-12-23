@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Web;
-using SmartHouseMVC.Models.SmartHouse.Devices;
 
-namespace SmartHouseMVC.Models.SavingModel
+namespace SmartHouseMVC.Models.Position_Saving
 {
-    public class BinaryReadingWriting : IReadingWriting
+    public class BinarySaving : ISaving
     {
         private BinaryFormatter formatter = new BinaryFormatter();
         public int MakePosition()

@@ -8,7 +8,7 @@ using SmartHouseMVC.Models.SmartHouse.Devices;
 
 namespace SmartHouseMVC.Helpers
 {
-    public static class ISwitchableHelper
+    public static class SwitchableHelper
     {
         public static MvcHtmlString CreateControl(this HtmlHelper helper, Device device)
         {

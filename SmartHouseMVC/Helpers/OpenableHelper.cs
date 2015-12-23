@@ -9,7 +9,7 @@ using SmartHouseMVC.Models.SmartHouse.Interfaces;
 
 namespace SmartHouseMVC.Helpers
 {
-    public static class IOpenableHelper
+    public static class OpenableHelper
     {
         public static MvcHtmlString CreateControl(this HtmlHelper helper, Device device)
         {

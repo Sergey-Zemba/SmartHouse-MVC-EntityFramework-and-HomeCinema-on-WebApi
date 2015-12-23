@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using System.Web.Razor.Generator;
 using SmartHouseMVC.Models.SmartHouse.Devices;
 using SmartHouseMVC.Models.SmartHouse.Interfaces;
 
 namespace SmartHouseMVC.Helpers
 {
-    public static class IRecordingHelper
+    public static class ThreeDimensionalHelper
     {
         public static MvcHtmlString CreateControl(this HtmlHelper helper, Device device)
         {
@@ -25,21 +26,22 @@ namespace SmartHouseMVC.Helpers
             string className = device.GetType().Name;
             if (!className.Contains("_"))
             {
-                div.InnerHtml += helper.ActionLink(" ", "Rec", device.GetType().Name, new { id = device.Id },
-                    new { @class = "control rec" });
+                div.InnerHtml += helper.ActionLink(" ", "ThreeDOnOff", device.GetType().Name, new { id = device.Id },
+                    new { @class = "control threeD" });
             }
             else
             {
-                div.InnerHtml += helper.ActionLink(" ", "Rec", device.GetType().BaseType.Name, new { id = device.Id },
-                    new { @class = "control rec" });
+                div.InnerHtml += helper.ActionLink(" ", "ThreeDOnOff", device.GetType().BaseType.Name, new { id = device.Id },
+                    new { @class = "control threeD" });
             }
             return new MvcHtmlString(div.ToString());
         }
+
         public static MvcHtmlString CreateIndicator(this HtmlHelper helper, Device device)
         {
             TagBuilder img = new TagBuilder("img");
             img.AddCssClass("indicator");
-            if ((device as IRecording).RecordMode && device.SwitchState)
+            if ((device as IThreeDimensional).ThreeDMode && device.SwitchState)
             {
                 img.AddCssClass("visible");
             }
@@ -47,8 +49,8 @@ namespace SmartHouseMVC.Helpers
             {
                 img.AddCssClass("invisible");
             }
-            img.MergeAttribute("src", "/Css/Controls/recind.jpg");
-            img.MergeAttribute("alt", "Rec");
+            img.MergeAttribute("src", "/Css/Controls/3Dind.png");
+            img.MergeAttribute("alt", "3D");
             return new MvcHtmlString(img.ToString());
         }
     }

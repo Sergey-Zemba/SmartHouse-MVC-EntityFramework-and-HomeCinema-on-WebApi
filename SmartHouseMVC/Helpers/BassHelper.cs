@@ -9,7 +9,7 @@ using SmartHouseMVC.Models.SmartHouse.Interfaces;
 
 namespace SmartHouseMVC.Helpers
 {
-    public static class IBassHelper
+    public static class BassHelper
     {
         public static MvcHtmlString CreateControl(this HtmlHelper helper, Device device)
         {

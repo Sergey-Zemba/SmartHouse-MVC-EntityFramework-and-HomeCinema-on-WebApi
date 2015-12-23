@@ -3,10 +3,10 @@
 <div class="item camera">
     @DeleteHelper.CreateControl(Html, Model)
     <div class="indicators">
-        @IRecordingHelper.CreateIndicator(Html, Model)
+        @RecordingHelper.CreateIndicator(Html, Model)
     </div>
     <div class="controls">
-        @ISwitchableHelper.CreateControl(Html, Model)
-        @IRecordingHelper.CreateControl(Html, Model)
+        @SwitchableHelper.CreateControl(Html, Model)
+        @RecordingHelper.CreateControl(Html, Model)
     </div>
 </div>

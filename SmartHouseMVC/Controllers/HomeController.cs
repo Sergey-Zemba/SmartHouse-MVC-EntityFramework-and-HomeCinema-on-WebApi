@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SmartHouseMVC.Models;
-using SmartHouseMVC.Models.SavingModel;
+using SmartHouseMVC.Models.Position_Saving;
 using SmartHouseMVC.Models.SmartHouse.Devices;
 
 namespace SmartHouseMVC.Controllers
@@ -14,7 +14,7 @@ namespace SmartHouseMVC.Controllers
     {
         DeviceContext context = new DeviceContext();
         List<Device> devices = new List<Device>();
-        IReadingWriting irw = new SessionReadingWriting();
+        ISaving savingType = new BinarySaving();
 
         public ActionResult Index()
         {
@@ -32,7 +32,7 @@ namespace SmartHouseMVC.Controllers
         [HttpPost]
         public ActionResult DoAction(string action)
         {
-            int position = irw.MakePosition();
+            int position = savingType.MakePosition();
             switch (action)
             {
                 case "addAirConditioner":

@@ -3,12 +3,12 @@
 <div class="item loudspeakers">
     @DeleteHelper.CreateControl(Html, Model)
     <div class="indicators">
-        @IVolumeableHelper.CreateIndicator(Html, Model)
-        @IBassHelper.CreateIndicator(Html, Model)
+        @VolumeableHelper.CreateIndicator(Html, Model)
+        @BassHelper.CreateIndicator(Html, Model)
     </div>
     <div class="controls">
-        @ISwitchableHelper.CreateControl(Html, Model)
-        @IVolumeableHelper.CreateControl(Html, Model)
-        @IBassHelper.CreateControl(Html, Model)
+        @SwitchableHelper.CreateControl(Html, Model)
+        @VolumeableHelper.CreateControl(Html, Model)
+        @BassHelper.CreateControl(Html, Model)
     </div>
 </div>

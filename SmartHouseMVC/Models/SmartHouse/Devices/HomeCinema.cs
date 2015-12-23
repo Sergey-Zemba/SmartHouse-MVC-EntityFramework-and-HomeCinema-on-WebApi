@@ -43,6 +43,15 @@ namespace SmartHouseMVC.Models.SmartHouse.Devices
                 Loudspeakers.CurrentVolume = value;
             }
         }
+        public int PreviousVolume
+        {
+            get { return Tv.PreviousVolume; }
+            set
+            {
+                Tv.PreviousVolume = value;
+                Loudspeakers.PreviousVolume = value;
+            }
+        }
         public bool MuteState
         {
             get { return Tv.MuteState; }

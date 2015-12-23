@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Web;
-using SmartHouseMVC.Models.SmartHouse.Devices;
+﻿using System.Web;
 
-namespace SmartHouseMVC.Models.SavingModel
+namespace SmartHouseMVC.Models.Position_Saving
 {
-    public class SessionReadingWriting : IReadingWriting
+    public class SessionSaving : ISaving
     {
         public int MakePosition()
         {
