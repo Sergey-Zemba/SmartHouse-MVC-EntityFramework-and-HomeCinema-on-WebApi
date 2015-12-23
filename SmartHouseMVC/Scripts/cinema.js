@@ -20,12 +20,12 @@ function repaint(data) {
         "class": "hidden",
         value: data.Id
     }).appendTo(newView);
-    var remove = $("<a/>", {
+    var removeControl = $("<a/>", {
         "class": "delete",
         href: "/HomeCinema/Delete/" + data.Id
     });
-    $(remove).click(function (event) { remove(event); });
-    $("<div/>").append(remove).appendTo(newView);
+    $(removeControl).click(function (event) { remove(event); });
+    $("<div/>").append(removeControl).appendTo(newView);
 
     var indicators = $("<div/>");
     $(indicators).addClass("indicators");
