@@ -13,10 +13,6 @@ namespace SmartHouseMVC.Models
         {
             Database.SetInitializer(new DeviceContextInitializer());
         }
-        public DeviceContext() : base("DefaultConnection")
-        {
-            
-        }
 
         public DbSet<AirConditioner> AirConditioners { get; set; }
         public DbSet<Camera> Cameras { get; set; }
