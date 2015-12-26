@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SmartHouseMVC.Models.SmartHouse.Devices.Device" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAAAAAkIAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Models\SmartHouse\Devices\Device.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmartHouseMVC.Models.SmartHouse.Devices.AirConditioner" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Models\SmartHouse\Devices\AirConditioner.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmartHouseMVC.Models.SmartHouse.Devices.Camera" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\SmartHouse\Devices\Camera.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmartHouseMVC.Models.SmartHouse.Devices.Fridge" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAMAAAAAAAIAAAAAAAAAAAAAAAAACIAAA=</HashCode>
+      <FileName>Models\SmartHouse\Devices\Fridge.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmartHouseMVC.Models.SmartHouse.Devices.Garage" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Models\SmartHouse\Devices\Garage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmartHouseMVC.Models.SmartHouse.Devices.HomeCinema" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAAgIIAAAAAAIAAAIAAgAAAAAACAEABAABBgAAAIIQ=</HashCode>
+      <FileName>Models\SmartHouse\Devices\HomeCinema.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmartHouseMVC.Models.SmartHouse.Devices.Loudspeakers" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAIAAAAAAIAAAIAAAAAAAAAAAAABAABAAAAAIAQ=</HashCode>
+      <FileName>Models\SmartHouse\Devices\LoudSpeakers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmartHouseMVC.Models.SmartHouse.Devices.Tv" Collapsed="true">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAgAIAAAAAAIAAAIAAAAAAAAACAEABAABAgAAAAAQ=</HashCode>
+      <FileName>Models\SmartHouse\Devices\TV.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="SmartHouseMVC.Models.SmartHouse.Interfaces.IBass" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\SmartHouse\Interfaces\IBass.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmartHouseMVC.Models.SmartHouse.Interfaces.IOpenable" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Models\SmartHouse\Interfaces\IOpenable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmartHouseMVC.Models.SmartHouse.Interfaces.IRecording" Collapsed="true">
+    <Position X="13" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\SmartHouse\Interfaces\IRecording.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmartHouseMVC.Models.SmartHouse.Interfaces.ISwitchable" Collapsed="true">
+    <Position X="14.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Models\SmartHouse\Interfaces\ISwitchable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmartHouseMVC.Models.SmartHouse.Interfaces.ITemperature" Collapsed="true">
+    <Position X="13" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Models\SmartHouse\Interfaces\ITemperature.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmartHouseMVC.Models.SmartHouse.Interfaces.IThreeDimensional" Collapsed="true">
+    <Position X="14.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\SmartHouse\Interfaces\IThreeDimensional.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmartHouseMVC.Models.SmartHouse.Interfaces.IVolumeable" Collapsed="true">
+    <Position X="13" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAIAAAIAAAAAAAAAAAAABAABAAAAAAAQ=</HashCode>
+      <FileName>Models\SmartHouse\Interfaces\IVolumeable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
